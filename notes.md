@@ -231,3 +231,14 @@ to fire-and-forget (unawaited with catchError) or `if (isMobile && !isOhos) awai
 ### Device state after phase (final)
 
 验收T7 archived via the app UI (history preserved, restorable from settings); home shows 喝水 only — flame 1, day 5 checked, cover intact; user data otherwise undisturbed. The fix-round-1 HAP remains installed and now reads/writes `files/flutter/`; `hdc list targets` still shows 5ZFYD25B20000755. Repo: `lib/main.dart` fix committed (`c235b7c`); notes.md committed separately (this commit); scratch artifacts only under `D:\ohos-tmp\` (t7b_build.log, t7b_hilog_full.txt, t7b2_*.jpeg screenshots, t7b2_hilog_focus.txt).
+
+## 2026-11-06 spike: notification+timezone on ohos fork (Phase-2 T1)
+
+Device 5ZFYD25B20000755, debug hap. Logs: `D:\ohos-tmp\{t1_probe_v5.log, t1_tray2.jpeg, v6_hilog_full.log, v6b_hilog_full.log}`.
+
+- Pipeline GREEN: adapter init=true; permission granted (dialog on post-restart first run); direct show() in tray (user-confirmed); AddSlot ok.
+- Timezone: timeZoneName="CST" (non-IANA); flutter_timezone getLocalTimezone="Asia/Shanghai" (IANA valid, tz.getLocation ok) — T2 consumes flutter_timezone on ohos.
+- zonedSchedule timer+calendar both 1700002 "exceeds the limit[0]"; app holds 0 valid reminders; device log "ReminderControl ... notification not allowed" + "VerifyCloudCapability failed, capability=reminder_capability"; bm dump appProvisionType=debug. Root cause: commercial NEXT gives debug-signed apps reminder quota 0. PUBLISH_AGENT_REMINDER declared; notification toggle ON (direct works).
+- Ruling 4: reminder verification needs RELEASE signing → T7 before M1 device verify; T4/T5/T6/T8 proceed first (user P0: AGC release certs).
+- Probe removed: lib/main.dart, module.json5, pubspec.yaml/lock net-zero vs 39477bc.
+- Suite after probe removal: `+547 ~2 -2` — exact baseline hold (gate passed).
