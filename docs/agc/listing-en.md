@@ -45,7 +45,7 @@ habit tracker, streak, daily habits, todo list, focus timer, offline, no ads, op
 
 - **Category suggestion:** Efficiency
 - **Age rating suggestion:** All ages (lowest tier). Questionnaire points: no violence, no adult content, no user-generated content or social features, no gambling, no in-app purchases, no ads. A pure utility app with no rating-sensitive content.
-- **Version:** versionName 1.0.0 / versionCode 1000000 (current actual values from `ohos/AppScope/app.json5`)
+- **Version:** versionName 2.6.0 / versionCode 17 — taken from `pubspec.yaml` (`version: 2.6.0+17`), which is the source of truth for the store listing. `ohos/AppScope/app.json5` still carries placeholder values (1.0.0 / 1000000) and is NOT authoritative; verify the release build via `hdc shell bm dump -n com.rixin.app` before submission (Task 7).
 
 ## Permission declarations
 
@@ -64,4 +64,4 @@ habit tracker, streak, daily habits, todo list, focus timer, offline, no ads, op
 - [ ] Placeholders `<FORK-URL>`, `<PRIVACY-POLICY-URL>`, `<ICP-BEIAN>` replaced
 - [ ] Reminder copy depends on Task 3 (notifications) landing; if the submitted build lacks reminders, drop the "Local reminders" bullet and declare INTERNET only
 - [ ] Screenshots taken per `screenshot-shotlist.md` (1320×2760, 4–5 shots)
-- [ ] Version matches `ohos/AppScope/app.json5`
+- [ ] Version matches `pubspec.yaml` (2.6.0+17), confirmed on the release build via `hdc shell bm dump -n com.rixin.app`

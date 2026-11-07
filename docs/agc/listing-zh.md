@@ -45,7 +45,7 @@
 
 - **分类建议：** 效率（Efficiency）
 - **年龄分级建议：** 全年龄（最低档）。问卷要点：无暴力、无成人内容、无用户生成内容／社交、无博彩、应用内无付费、无广告。
-- **版本：** versionName 1.0.0 / versionCode 1000000（当前 `ohos/AppScope/app.json5` 实际值）
+- **版本：** versionName 2.6.0 / versionCode 17 —— 取自 `pubspec.yaml`（`version: 2.6.0+17`），上架版本以此为准。`ohos/AppScope/app.json5` 中仍是占位值（1.0.0 / 1000000），不作为依据；提审前用 `hdc shell bm dump -n com.rixin.app` 核对发布构建（Task 7）。
 
 ## 权限申报理由
 
@@ -64,4 +64,4 @@
 - [ ] `<FORK-URL>`、`<PRIVACY-POLICY-URL>`、`<ICP-BEIAN>` 占位符已替换
 - [ ] 提醒文案依赖 Task 3 通知系统落地；若提审版不含提醒，删“本地提醒”一条，权限申报改为仅 INTERNET
 - [ ] 截图按 `screenshot-shotlist.md` 拍摄并上传（1320×2760，4–5 张）
-- [ ] 版本号与 `ohos/AppScope/app.json5` 一致
+- [ ] 版本号与 `pubspec.yaml`（2.6.0+17）一致，并用 `hdc shell bm dump -n com.rixin.app` 在发布构建上确认
