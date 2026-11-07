@@ -65,3 +65,5 @@
 - [ ] 提醒文案依赖 Task 3 通知系统落地；若提审版不含提醒，删“本地提醒”一条，权限申报改为仅 INTERNET
 - [ ] 截图按 `screenshot-shotlist.md` 拍摄并上传（1320×2760，4–5 张）
 - [ ] 版本号与 `pubspec.yaml`（2.6.0+17）一致，并用 `hdc shell bm dump -n com.rixin.app` 在发布构建上确认
+- [ ] 全部 17 个语言的 `share_friends_message` 分享链接仍指向上游站 https://inlitx.github.io/streak/ —— fork 仓库建好后统一替换为 Renew 仓库/镜像地址
+- [ ] （可选）`lib/app/startup_failure.dart` 的反馈地址指向 upstream issues —— 提审时可换为 fork 仓库 issues

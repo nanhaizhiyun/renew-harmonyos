@@ -65,3 +65,5 @@ habit tracker, streak, daily habits, todo list, focus timer, offline, no ads, op
 - [ ] Reminder copy depends on Task 3 (notifications) landing; if the submitted build lacks reminders, drop the "Local reminders" bullet and declare INTERNET only
 - [ ] Screenshots taken per `screenshot-shotlist.md` (1320×2760, 4–5 shots)
 - [ ] Version matches `pubspec.yaml` (2.6.0+17), confirmed on the release build via `hdc shell bm dump -n com.rixin.app`
+- [ ] The share link in all 17 `share_friends_message` strings still points to the upstream site https://inlitx.github.io/streak/ — swap to the Renew repo/mirror URL once the fork repo exists
+- [ ] (Optional) `lib/app/startup_failure.dart` feedback URL points to upstream issues — consider pointing it at the fork tracker at submission
