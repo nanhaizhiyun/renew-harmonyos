@@ -223,6 +223,22 @@ class _AboutPageState extends State<AboutPage> {
             delay: _base,
             child: Center(
               child: Text(
+                'HarmonyOS adaptation: chenbf — <FORK-URL>',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.5,
+                  color: muted.withValues(alpha: 0.7),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Entrance(
+            index: 7,
+            delay: _base,
+            child: Center(
+              child: Text(
                 _version,
                 style: TextStyle(
                   fontSize: 12,
@@ -235,7 +251,7 @@ class _AboutPageState extends State<AboutPage> {
           ),
           const SizedBox(height: 14),
           Entrance(
-            index: 7,
+            index: 8,
             delay: _base,
             child: GestureDetector(
               onTap: () => _open('$_kGitHubUrl/blob/main/LICENSE'),

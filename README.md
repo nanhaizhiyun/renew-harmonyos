@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Fork declaration:** This repository, **Renew (日新)**, is a fork of [**Streak**](https://github.com/InlitX/streak) by [InlitX](https://github.com/InlitX), licensed under the **GNU GPLv3**. It is an independent **HarmonyOS adaptation by chenbf**, modified in **2026**. Upstream: https://github.com/InlitX/streak · This fork: `<FORK-URL>`
+
 <div align="center">
 
 <img src="assets/banner.png" alt="Streak, a minimal, private, ad-free habit tracker" width="100%" />
