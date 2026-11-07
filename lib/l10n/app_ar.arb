@@ -56,7 +56,7 @@
       }
     }
   },
-  "app_lock_sub": "طلب بصمتك أو وجهك لفتح تطبيق Streak",
+  "app_lock_sub": "طلب بصمتك أو وجهك لفتح تطبيق Renew",
   "preferences_sub": "اللغة، الأسبوع والترتيب",
   "refresh_now_sub": "احضار ما تركته أجهزتك الأخرى في المجلد",
   "share_photo": "صورة",
@@ -104,7 +104,7 @@
   },
   "day_start": "اليوم يبدأ",
   "current_streak": "السلسلة الحالية",
-  "share_friends_message": "حافظ على استمرارية سلسلتي باستخدام Streak - وهو تطبيق صغير ومجاني لتتبع العادات بدون إنترنت، بدون حسابات وبدون إعلانات. تعال وابدأ سلسلتك الخاصة: https://inlitx.github.io/streak/",
+  "share_friends_message": "حافظ على استمرارية سلسلتي باستخدام Renew - وهو تطبيق صغير ومجاني لتتبع العادات بدون إنترنت، بدون حسابات وبدون إعلانات. تعال وابدأ سلسلتك الخاصة: https://inlitx.github.io/streak/",
   "undo": "تراجع",
   "see_more": "عرض المزيد",
   "support_sub": "بلغ عن خطأ أو اطلب ميزة جديدة",
@@ -538,7 +538,7 @@
   "keep_editing": "متابعة التعديل",
   "tracking_hide_sub": "العادة التي تتابعها فقط لا تظهر في هذه القائمة",
   "reminders_ready_title": "التذكيرات مفعّلة",
-  "reminders_ready_body": "سيُذكّرك Streak هنا.",
+  "reminders_ready_body": "سيُذكّرك Renew هنا.",
   "archive_habit_body": "نقل \"{name}\" إلى الأرشيف؟ سيُحتفظ بسجله ويمكنك استعادته من الإعدادات.",
   "@archive_habit_body": {
     "placeholders": {

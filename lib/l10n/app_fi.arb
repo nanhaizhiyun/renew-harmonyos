@@ -60,7 +60,7 @@
     }
   },
   "quotes_app": "Sovelluksesta",
-  "about_inline": "Streak on avoimen lähdekoodin sovellus tapojesi seurantaan. Ei käyttäjiä, ei rajoituksia, ei maksuja. Kaikki pysyy puhelimellasi.\n\nKuka vaan voi nähdä koodin, kehittää sitä, tai käyttää sitä vapaasti.",
+  "about_inline": "Renew on avoimen lähdekoodin sovellus tapojesi seurantaan. Ei käyttäjiä, ei rajoituksia, ei maksuja. Kaikki pysyy puhelimellasi.\n\nKuka vaan voi nähdä koodin, kehittää sitä, tai käyttää sitä vapaasti.",
   "ranking": "Sijoitukset",
   "count_months": "{count, plural, =1{1 kuukausi} other{{count} kuukautta}}",
   "@count_months": {
@@ -147,7 +147,7 @@
   },
   "motiv_perfect": "Täydellinen päivä! 🔥",
   "add_habit": "Lisää tapa",
-  "app_lock_sub": "Kysy sormenjälkeä tai kasvojentunnistusta Streakin avaamiseksi",
+  "app_lock_sub": "Kysy sormenjälkeä tai kasvojentunnistusta Renewin avaamiseksi",
   "edit": "Muokkaa",
   "not_enough_data": "Ei vielä tarpeeksi tietoja",
   "auto_backup_daily": "Joka päivä",
@@ -282,7 +282,7 @@
   "daily": "Päivittäin",
   "bg_gradient": "Liukuväri",
   "rate_github_sub": "Tue projektia antamalla tähti",
-  "share_friends_message": "Pidän tavoistani kiinni Streakilla – pieni, ilmainen ja paikallinen tapojen seuranta ilman käyttäjätunnuksia ja mainoksia. Tutustu sinäkin: https://inlitx.github.io/streak/",
+  "share_friends_message": "Pidän tavoistani kiinni Renewilla – pieni, ilmainen ja paikallinen tapojen seuranta ilman käyttäjätunnuksia ja mainoksia. Tutustu sinäkin: https://inlitx.github.io/streak/",
   "no_data_yet": "Ei vielä tietoja",
   "about": "Tietoja",
   "undo": "Kumoa",
@@ -302,7 +302,7 @@
   "mon": "Ma",
   "quant_unit_ml": "ml",
   "wipe_data_warning": "Tämä poistaa kaikki tavat, muistiinpanot, keskittymissessiot ja asetukset tällä laitteella. Tätä ei voi kumota, jollei sinulla ole varmuuskopiota jälkikäteen tuotavaksi.",
-  "auto_backup_where": "Kun avaat sovelluksen, Streak luo varmuuskopion sekä luettavan kopion tavoistasi, minkä voit avata millä vain tekstieditorilla. Varmuuskopioista 5 uusinta säilytetään.",
+  "auto_backup_where": "Kun avaat sovelluksen, Renew luo varmuuskopion sekä luettavan kopion tavoistasi, minkä voit avata millä vain tekstieditorilla. Varmuuskopioista 5 uusinta säilytetään.",
   "streaks": "Putket",
   "quant_edit_title": "Tänäinen määrä",
   "reminder_message": "Viesti (vaihtoehtoinen)",
@@ -342,7 +342,7 @@
       }
     }
   },
-  "app_lock_title": "Streak on lukittu",
+  "app_lock_title": "Renew on lukittu",
   "archived_habits": "Arkistoidut tavat",
   "restored": "Tapa palautettu",
   "app_lock_delay_seconds": "{value} sekuntia",
@@ -451,7 +451,7 @@
   "just_tracking": "Vain seuranta",
   "sun": "Su",
   "motiv_start": "Aloita päivä vahvasti 💪",
-  "about_body": "Streak syntyi yksinkertaisesta ideasta: miksi maksaa omien tapojen seurannasta?\n\nTämä sovellus on myös täysin avointa lähdekoodia. Kuka vain voi nähdä miten se toimii, ehdottaa muutoksia, tai tehdä oman versionsa. Ei mustia laatikoita. Ei yllätyksiä.\n\nYksityisyytesi on totaalista – kaikki pysyy puhelimellasi. Ei käyttäjiä, ei palvelimia, ei mainoksia. Yksikään tavu ei poistu laitteeltasi.\n\nEi rajoituksia. Luo tapoja sydämesi kyllyydestä. Ei tilauksia, ei \"pro-versiota\", ei pop-up-ilmoituksia kysymässä maksuja. Ikinä.\n\nJos sovellus antaa sinulle jotain, voit tukea sitä tähdellä GitHubissa tai ostamalla minulle kahvin. Mutta se on täysin vaihtoehtoista – sovellus on sinun joka tapauksessa.",
+  "about_body": "Renew syntyi yksinkertaisesta ideasta: miksi maksaa omien tapojen seurannasta?\n\nTämä sovellus on myös täysin avointa lähdekoodia. Kuka vain voi nähdä miten se toimii, ehdottaa muutoksia, tai tehdä oman versionsa. Ei mustia laatikoita. Ei yllätyksiä.\n\nYksityisyytesi on totaalista – kaikki pysyy puhelimellasi. Ei käyttäjiä, ei palvelimia, ei mainoksia. Yksikään tavu ei poistu laitteeltasi.\n\nEi rajoituksia. Luo tapoja sydämesi kyllyydestä. Ei tilauksia, ei \"pro-versiota\", ei pop-up-ilmoituksia kysymässä maksuja. Ikinä.\n\nJos sovellus antaa sinulle jotain, voit tukea sitä tähdellä GitHubissa tai ostamalla minulle kahvin. Mutta se on täysin vaihtoehtoista – sovellus on sinun joka tapauksessa.",
   "done_today": "Tänään suoritettu",
   "time": "Aika",
   "quote_8": "Pienet tavat, suuri muutos.",
