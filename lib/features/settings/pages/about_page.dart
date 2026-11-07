@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:streak/app/theme/app_theme.dart';
 import 'package:streak/app/theme/app_tokens.dart';
 import 'package:streak/core/extensions/inset_extensions.dart';
@@ -12,7 +10,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:streak/core/express/express_page.dart';
 import 'package:provider/provider.dart';
 import 'package:streak/features/settings/state/settings_controller.dart';
-import 'package:streak/core/express/express_surface.dart';
 import 'package:streak/core/express/express_type.dart';
 import 'package:streak/core/minimal/minimal_type.dart';
 
@@ -27,18 +24,6 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-  String _version = '';
-
-  @override
-  void initState() {
-    super.initState();
-    PackageInfo.fromPlatform().then((info) {
-      if (mounted) {
-        setState(() => _version = 'v${info.version}');
-      }
-    });
-  }
-
   Future<void> _open(String url) async {
     try {
       await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
@@ -82,24 +67,6 @@ class _AboutPageState extends State<AboutPage> {
           fontSize: 18,
           height: 1.3,
           color: muted,
-        ),
-    };
-
-    final storyStyle = switch (style) {
-      2 => ExpressType.body.at(
-          15,
-          height: 1.7,
-          color: scheme.onSurface.withValues(alpha: 0.85),
-        ),
-      1 => MinimalType.body(
-          15,
-          height: 1.7,
-          color: scheme.onSurface.withValues(alpha: 0.85),
-        ),
-      _ => TextStyle(
-          fontSize: 15,
-          height: 1.7,
-          color: scheme.onSurface.withValues(alpha: 0.85),
         ),
     };
 
@@ -174,85 +141,8 @@ class _AboutPageState extends State<AboutPage> {
           Entrance(
             index: 3,
             delay: _base,
-            child: Typewriter(
-              text: context.l10n.about_story,
-              duration: const Duration(milliseconds: 2200),
-              delay: const Duration(milliseconds: 1400),
-              style: storyStyle,
-            ),
-          ),
-          const SizedBox(height: 32),
-          Entrance(
-            index: 4,
-            delay: _base,
-            child: Row(
-              children: [
-                Expanded(
-                  child: _LinkButton(
-                    icon: LucideIcons.star,
-                    label: 'GitHub',
-                    onTap: () => _open(_kGitHubUrl),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          const SizedBox(height: 40),
-          Entrance(
-            index: 5,
-            delay: _base,
             child: Center(
               child: _MadeBy(onTap: () => _open(_kGitHubUrl)),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Entrance(
-            index: 6,
-            delay: _base,
-            child: Center(
-              child: Text(
-                'HarmonyOS adaptation: chenbf',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 0.5,
-                  color: muted.withValues(alpha: 0.7),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Entrance(
-            index: 7,
-            delay: _base,
-            child: Center(
-              child: Text(
-                _version,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 0.5,
-                  color: muted.withValues(alpha: 0.7),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 14),
-          Entrance(
-            index: 8,
-            delay: _base,
-            child: GestureDetector(
-              onTap: () => _open('$_kGitHubUrl/blob/main/LICENSE'),
-              child: Text(
-                context.l10n.about_legal,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 11.5,
-                  height: 1.45,
-                  color: muted.withValues(alpha: 0.7),
-                ),
-              ),
             ),
           ),
         ],
@@ -306,92 +196,6 @@ class _MadeBy extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
             style: style,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _LinkButton extends StatelessWidget {
-  const _LinkButton({
-    required this.icon,
-    required this.label,
-    required this.onTap,
-  });
-
-  final IconData icon;
-  final String label;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = context.colors;
-    if (context.watch<SettingsController>().isExpressStyle) {
-      return ExpressSquish(
-        onTap: onTap,
-        child: Container(
-          height: 56,
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          decoration: BoxDecoration(
-            color: expressSurface(context),
-            borderRadius: BorderRadius.circular(29),
-            border: expressHairline(context),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(icon, size: 17, color: scheme.primary),
-              const SizedBox(width: 8),
-              Flexible(
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    label,
-                    maxLines: 1,
-                    style: ExpressType.headline.at(
-                      14,
-                      weight: 800,
-                      width: 100,
-                      color: scheme.onSurface,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    }
-    return Material(
-      color: scheme.surfaceContainerHighest,
-      borderRadius: BorderRadius.circular(14),
-      clipBehavior: Clip.antiAlias,
-      child: Semantics(
-        button: true,
-        child: InkWell(
-          onTap: onTap,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 13),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(icon, size: 17, color: scheme.onSurface),
-                const SizedBox(width: 8),
-                Flexible(
-                  child: Text(
-                    label,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                      color: scheme.onSurface,
-                    ),
-                  ),
-                ),
-              ],
-            ),
           ),
         ),
       ),
