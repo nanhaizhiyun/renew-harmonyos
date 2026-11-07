@@ -179,7 +179,7 @@
   "frequency": "Frequência",
   "import_replace": "Substituir tudo",
   "no_habits_yet": "Ainda não há hábitos",
-  "made_by": "Feito com ❤️ por @InlitX",
+  "made_by": "Baseado em Streak de @InlitX",
   "reminder_message_hint": "Deixe em branco para usar uma frase motivacional",
   "delete_habit_body": "Excluir \"{name}\"? Esta ação não pode ser desfeita.",
   "@delete_habit_body": {

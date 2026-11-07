@@ -12,14 +12,11 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:streak/core/express/express_page.dart';
 import 'package:provider/provider.dart';
 import 'package:streak/features/settings/state/settings_controller.dart';
-import 'package:streak/core/express/express_motion.dart';
 import 'package:streak/core/express/express_surface.dart';
 import 'package:streak/core/express/express_type.dart';
 import 'package:streak/core/minimal/minimal_type.dart';
 
 const _kGitHubUrl = 'https://github.com/InlitX/streak';
-const _kProfileUrl = 'https://github.com/InlitX';
-const _kCoffeeUrl = 'https://ko-fi.com/inlitx';
 const _base = Duration(milliseconds: 340);
 
 class AboutPage extends StatefulWidget {
@@ -197,14 +194,6 @@ class _AboutPageState extends State<AboutPage> {
                     onTap: () => _open(_kGitHubUrl),
                   ),
                 ),
-                const SizedBox(width: Express.groupGap),
-                Expanded(
-                  child: _LinkButton(
-                    icon: LucideIcons.coffee,
-                    label: context.l10n.buy_coffee,
-                    onTap: () => _open(_kCoffeeUrl),
-                  ),
-                ),
               ],
             ),
           ),
@@ -214,7 +203,7 @@ class _AboutPageState extends State<AboutPage> {
             index: 5,
             delay: _base,
             child: Center(
-              child: _MadeBy(onTap: () => _open(_kProfileUrl)),
+              child: _MadeBy(onTap: () => _open(_kGitHubUrl)),
             ),
           ),
           const SizedBox(height: 10),
@@ -223,7 +212,7 @@ class _AboutPageState extends State<AboutPage> {
             delay: _base,
             child: Center(
               child: Text(
-                'HarmonyOS adaptation: chenbf — <FORK-URL>',
+                'HarmonyOS adaptation: chenbf',
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,

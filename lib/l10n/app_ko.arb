@@ -447,7 +447,7 @@
   "quant_goal_days": "목표 달성",
   "quant_stats_empty": "양을 기록하면 목표 달성에 실패했더라도, 여기에 누적돼요.",
   "ranking": "순위",
-  "made_by": "@InlitX가 ❤️을 담아 만듦",
+  "made_by": "@InlitX의 Streak 기반",
   "not_enough_data": "아직 데이터가 충분하지 않아요",
   "streak_on": "🔥 {n}일 연속 달성했어요. 계속하세요!",
   "@streak_on": {
