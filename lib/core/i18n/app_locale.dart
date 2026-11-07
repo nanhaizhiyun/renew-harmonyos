@@ -13,7 +13,10 @@ List<Locale> get shippedLocales => AppLocalizations.supportedLocales
 Locale pickLocale(Iterable<Locale>? wanted) {
   for (final locale in wanted ?? const <Locale>[]) {
     if (shippedLanguages.contains(locale.languageCode)) {
-      return Locale(locale.languageCode);
+      return Locale.fromSubtags(
+        languageCode: locale.languageCode,
+        scriptCode: locale.scriptCode,
+      );
     }
   }
   return const Locale('en');

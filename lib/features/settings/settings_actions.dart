@@ -659,6 +659,9 @@ class SettingsActions {
       'sv': 'Svenska',
       'vi': 'Tiếng Việt',
     };
+    if (locale.languageCode == 'zh' && locale.scriptCode == 'Hant') {
+      return '繁體中文';
+    }
     final base = names[locale.languageCode] ?? locale.languageCode.toUpperCase();
     return locale.countryCode == null ? base : '$base (${locale.countryCode})';
   }
