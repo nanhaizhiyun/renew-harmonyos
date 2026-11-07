@@ -222,7 +222,7 @@
   "app_lock_sub": "Pide tu huella o tu cara para abrir Renew",
   "app_lock_unavailable": "Este móvil no tiene biometría configurada",
   "app_lock_failed": "No se pudo comprobar que eres tú",
-  "app_lock_title": "Renew está bloqueada",
+  "app_lock_title": "Renew está bloqueado",
   "app_lock_unlock": "Desbloquear",
   "app_lock_delay": "Bloquear tras",
   "app_lock_delay_instant": "Al instante",
