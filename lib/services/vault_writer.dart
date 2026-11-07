@@ -119,9 +119,9 @@ class VaultWriter {
     final live = habits.where((h) => !h.isArchived).length;
     final archived = habits.length - live;
     return '''
-# Streak
+# Renew
 
-Everything Streak knows about your habits, written as plain files you can read
+Everything Renew knows about your habits, written as plain files you can read
 with any editor, or open as a vault in a notes app. Nothing here is encrypted or
 packed: it is yours.
 
@@ -143,12 +143,12 @@ Written on ${_stamp(DateTime.now())}.
 - `notes.md` the notes you wrote on habit days.
 - `focus.md` every focus session, newest first.
 
-Streak rewrites this folder on every automatic backup, so anything you add here
+Renew rewrites this folder on every automatic backup, so anything you add here
 under a name of its own is left alone, but edits to these files are overwritten.
 
 ## Restoring
 
-These files are for reading. What Streak restores from is the
+These files are for reading. What Renew restores from is the
 `streak_backup_*.json` sitting in the folder above this one. To bring your data
 back, use Settings > Data > Import backup and pick the newest of those. Editing
 the markdown here does not change anything in the app.

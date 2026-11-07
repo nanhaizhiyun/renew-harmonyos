@@ -76,7 +76,7 @@ Future<Directory> _resolveDataDir() async {
   }
   if (used.existsSync()) {
     throw FileSystemException(
-      'Your Streak data lives in Documents\\$appDataFolder, which Windows is not letting the app open right now',
+      'Your Renew data lives in Documents\\$appDataFolder, which Windows is not letting the app open right now',
     );
   }
   return support;

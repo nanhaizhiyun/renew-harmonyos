@@ -28,8 +28,8 @@ class StartupFailure extends StatelessWidget {
                 const SizedBox(height: 16),
                 Text(
                   blocked
-                      ? "Windows is blocking Streak's data"
-                      : 'Streak could not open its data',
+                      ? "Windows is blocking Renew's data"
+                      : 'Renew could not open its data',
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.white,
@@ -44,7 +44,7 @@ class StartupFailure extends StatelessWidget {
                           'access. Open Windows Security > Virus & threat '
                           'protection > Manage ransomware protection > Allow an app '
                           'through Controlled folder access, add Streak.exe and '
-                          'open Streak again.'
+                          'open Renew again.'
                       : 'Nothing has been lost. Please send this message to '
                           'github.com/InlitX/streak/issues so it can be fixed.',
                   textAlign: TextAlign.center,

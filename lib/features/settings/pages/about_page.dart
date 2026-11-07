@@ -156,7 +156,7 @@ class _AboutPageState extends State<AboutPage> {
             index: 1,
             delay: _base,
             child: Typewriter(
-              text: 'Streak',
+              text: 'Renew',
               duration: const Duration(milliseconds: 640),
               delay: const Duration(milliseconds: 120),
               style: nameStyle,

@@ -26,7 +26,7 @@ class StreakApp extends StatelessWidget {
     final settings = context.watch<SettingsController>();
 
     return MaterialApp(
-      title: 'Streak',
+      title: 'Renew',
       debugShowCheckedModeBanner: false,
       navigatorKey: AppNavigator.key,
       theme: AppTheme.light(

@@ -273,7 +273,7 @@ class BackupService {
 
     if (!isMobile) {
       final path = await FilePicker.platform.saveFile(
-        dialogTitle: 'Save your Streak backup',
+        dialogTitle: 'Save your Renew backup',
         fileName: name,
         type: FileType.custom,
         allowedExtensions: const ['zip'],
@@ -285,7 +285,7 @@ class BackupService {
 
     final result = await Share.shareXFiles(
       [XFile(zip, mimeType: 'application/zip')],
-      subject: 'Streak backup',
+      subject: 'Renew backup',
       sharePositionOrigin: origin,
     );
     return result.status == ShareResultStatus.success ||
@@ -294,7 +294,7 @@ class BackupService {
 
   static Future<BackupData> read() async {
     final result = await FilePicker.platform.pickFiles(
-      dialogTitle: 'Select a Streak backup file',
+      dialogTitle: 'Select a Renew backup file',
       type: FileType.any,
     );
     if (result == null || result.files.isEmpty) {
@@ -317,7 +317,7 @@ class BackupService {
     if (ImportService.looksLikeZip(head) ||
         ImportService.looksLikeSqlite(head)) {
       throw Exception(
-        'That is an export from another app, not a Streak backup. '
+        'That is an export from another app, not a Renew backup. '
         'Use "Import from another app" for it.',
       );
     }

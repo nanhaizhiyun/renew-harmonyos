@@ -258,7 +258,7 @@ class ImportService {
         habits.fold<int>(0, (a, h) => a + h.completions.length);
     return ImportOutcome(
       habits: habits,
-      source: 'Streak',
+      source: 'Renew',
       entries: entries,
       skipped: 0,
     );

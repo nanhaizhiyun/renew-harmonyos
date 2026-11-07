@@ -189,7 +189,7 @@ class NotificationService {
       notificationCategories: _categories(await localizations()),
     );
     final windows = WindowsInitializationSettings(
-      appName: 'Streak',
+      appName: 'Renew',
       appUserModelId: windowsAppId,
       guid: 'cfb32a7d-9c06-495b-8afa-df8829d33edc',
       iconPath: [
