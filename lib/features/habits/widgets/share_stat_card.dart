@@ -112,7 +112,7 @@ class ShareStatCard extends StatelessWidget {
                       ),
                       SizedBox(width: width * 0.025),
                       Text(
-                        'Renew',
+                        context.l10n.brandName,
                         style: TextStyle(
                           fontFamily: 'PlayfairDisplay',
                           fontStyle: FontStyle.italic,

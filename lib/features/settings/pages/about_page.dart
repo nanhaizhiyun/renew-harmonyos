@@ -156,7 +156,7 @@ class _AboutPageState extends State<AboutPage> {
             index: 1,
             delay: _base,
             child: Typewriter(
-              text: 'Renew',
+              text: context.l10n.brandName,
               duration: const Duration(milliseconds: 640),
               delay: const Duration(milliseconds: 120),
               style: nameStyle,

@@ -591,8 +591,9 @@ class HabitsController extends ChangeNotifier {
     }
   }
 
-  Future<ImportOutcome?> importFromApp() async {
-    final outcome = await LocalStore.guardWrites(ImportService.pickAndParse);
+  Future<ImportOutcome?> importFromApp({String? brandName}) async {
+    final outcome = await LocalStore.guardWrites(
+        () => ImportService.pickAndParse(brandName: brandName));
     if (outcome == null) return null;
     await LocalStore.guardWrites(() async {
       var order = habits.length;

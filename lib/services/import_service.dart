@@ -78,7 +78,7 @@ class ImportService {
 
   static const _uuid = Uuid();
 
-  static Future<ImportOutcome?> pickAndParse() async {
+  static Future<ImportOutcome?> pickAndParse({String? brandName}) async {
     final result = await FilePicker.platform.pickFiles(
       dialogTitle: 'Select an export from your habit app',
       type: FileType.any,
@@ -109,10 +109,11 @@ class ImportService {
       throw const ImportException('Could not read the selected file.');
     }
 
-    return parseBytes(bytes, fileName: name);
+    return parseBytes(bytes, fileName: name, brandName: brandName);
   }
 
-  static ImportOutcome parseBytes(List<int> bytes, {String fileName = ''}) {
+  static ImportOutcome parseBytes(List<int> bytes,
+      {String fileName = '', String? brandName}) {
     final name = fileName.toLowerCase();
 
     if (looksLikeSqlite(bytes)) throw const ImportException(_kDatabaseHint);
@@ -129,7 +130,7 @@ class ImportService {
       final decoded = _decodeJson(text);
       if (decoded != null) {
         if (_isStreakBackup(decoded)) {
-          return _buildFromStreak(decoded);
+          return _buildFromStreak(decoded, brandName);
         }
         if (_isHabitKit(decoded)) {
           return _build(_parseHabitKit(decoded), 'HabitKit');
@@ -236,7 +237,7 @@ class ImportService {
     );
   }
 
-  static ImportOutcome _buildFromStreak(dynamic decoded) {
+  static ImportOutcome _buildFromStreak(dynamic decoded, String? brandName) {
     final list = decoded is List
         ? decoded
         : (decoded is Map && decoded['habits'] is List
@@ -258,7 +259,7 @@ class ImportService {
         habits.fold<int>(0, (a, h) => a + h.completions.length);
     return ImportOutcome(
       habits: habits,
-      source: 'Renew',
+      source: brandName ?? 'Renew',
       entries: entries,
       skipped: 0,
     );

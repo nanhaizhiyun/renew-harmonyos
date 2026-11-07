@@ -369,6 +369,7 @@
   "about_credits_body": "基于 Flutter 开发。图标源自 Lucide。图表组件使用 fl_chart。字体采用 Figtree 与 Playfair Display。",
   "dev_handle": "@InlitX",
   "dev_role": "独立开发者・日新",
+  "brandName": "日新",
   "check_style": "查看样式",
   "square": "方形",
   "circle": "圆形",

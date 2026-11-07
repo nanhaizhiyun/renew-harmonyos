@@ -590,6 +590,7 @@
   "about_credits_body": "Built with Flutter. Icons by Lucide. Charts by fl_chart. Set in Figtree & Playfair Display.",
   "dev_handle": "@InlitX",
   "dev_role": "Indie maker · Renew",
+  "brandName": "Renew",
   "notes": "Notes",
   "notes_enable_sub": "Attach notes to any day of a habit",
   "add_note": "Add note",

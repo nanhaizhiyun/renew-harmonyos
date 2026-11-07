@@ -704,7 +704,7 @@ class _RailBrand extends StatelessWidget {
           if (!compact) ...[
           const SizedBox(width: 10),
           Text(
-            'Renew',
+            context.l10n.brandName,
             style: settings.isExpressStyle
                 ? ExpressType.headline.at(
                     17,

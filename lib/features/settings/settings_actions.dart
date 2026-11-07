@@ -157,7 +157,8 @@ class SettingsActions {
   static Future<void> importFromApp(BuildContext context) async {
     final controller = context.read<HabitsController>();
     try {
-      final outcome = await controller.importFromApp();
+      final outcome =
+        await controller.importFromApp(brandName: context.l10n.brandName);
       if (!context.mounted || outcome == null) return;
       if (outcome.notes.isNotEmpty) context.read<NotesController>().reload();
       AppSnackbar.success(
