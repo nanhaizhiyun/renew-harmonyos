@@ -34,7 +34,7 @@ void main() {
     expect(LocalStore.readFocusSessions(), isEmpty);
   });
 
-  testWidgets('classic lists the four sections', (tester) async {
+  testWidgets('classic lists the three sections', (tester) async {
     await pumpScreen(tester, const SettingsPage());
 
     expect(find.byType(ClassicSettingsPage), findsOneWidget);
@@ -42,7 +42,7 @@ void main() {
     expect(find.text('Appearance'), findsOneWidget);
     expect(find.text('Preferences'), findsOneWidget);
     expect(find.text('Data'), findsOneWidget);
-    expect(find.text('Support'), findsOneWidget);
+    expect(find.text('Support'), findsNothing);
 
     await scrollToEnd(tester);
   });

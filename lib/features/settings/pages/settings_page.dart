@@ -103,14 +103,6 @@ class ClassicSettingsPage extends StatelessWidget {
                     subtitle: context.l10n.data_sub,
                     onTap: () => AppNavigator.push(const _ClassicDataPage()),
                   ),
-                  settingsDivider(context),
-                  NavRow(
-                    icon: LucideIcons.heartHandshake,
-                    title: context.l10n.support,
-                    subtitle: context.l10n.support_sub,
-                    onTap: () =>
-                        AppNavigator.push(const _ClassicSupportPage()),
-                  ),
                 ],
               ),
             ),
@@ -887,47 +879,6 @@ class _ClassicDataPage extends StatelessWidget {
           title: context.l10n.wipe_data,
           subtitle: context.l10n.wipe_data_sub,
           onTap: () => SettingsActions.wipeEverything(context),
-        ),
-      ],
-    );
-  }
-}
-
-class _ClassicSupportPage extends StatelessWidget {
-  const _ClassicSupportPage();
-
-  @override
-  Widget build(BuildContext context) {
-    return _ClassicSection(
-      title: context.l10n.support,
-      label: context.l10n.support_sub,
-      children: [
-        NavRow(
-          icon: LucideIcons.userPlus,
-          title: context.l10n.share_friends,
-          subtitle: context.l10n.share_friends_sub,
-          onTap: () => SettingsActions.shareWithFriend(context),
-        ),
-        settingsDivider(context),
-        LinkRow(
-          icon: LucideIcons.star,
-          title: context.l10n.github_star_row,
-          subtitle: context.l10n.github_star_sub,
-          onTap: () => SettingsActions.openUrl(context, kGitHubUrl),
-        ),
-        settingsDivider(context),
-        LinkRow(
-          icon: LucideIcons.coffee,
-          title: context.l10n.buy_coffee,
-          subtitle: context.l10n.buy_coffee_sub,
-          onTap: () => SettingsActions.openUrl(context, kCoffeeUrl),
-        ),
-        settingsDivider(context),
-        LinkRow(
-          icon: LucideIcons.messageSquare,
-          title: context.l10n.report_issue,
-          subtitle: context.l10n.report_issue_sub,
-          onTap: () => SettingsActions.openUrl(context, '$kIssuesUrl/new'),
         ),
       ],
     );

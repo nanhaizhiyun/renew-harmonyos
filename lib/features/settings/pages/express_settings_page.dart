@@ -79,12 +79,6 @@ class ExpressSettingsPage extends StatelessWidget {
               subtitle: context.l10n.data_sub,
               onTap: () => AppNavigator.push(const _DataPage()),
             ),
-            ExpressTile(
-              icon: LucideIcons.heartHandshake,
-              title: context.l10n.support,
-              subtitle: context.l10n.support_sub,
-              onTap: () => AppNavigator.push(const _SupportPage()),
-            ),
           ],
         ),
       if (!listed) IntrinsicHeight(
@@ -122,15 +116,6 @@ class ExpressSettingsPage extends StatelessWidget {
                 title: context.l10n.data,
                 subtitle: context.l10n.data_sub,
                 onTap: () => AppNavigator.push(const _DataPage()),
-              ),
-            ),
-            const SizedBox(width: Express.groupGap),
-            Expanded(
-              child: _SectionTile(
-                icon: LucideIcons.heartHandshake,
-                title: context.l10n.support,
-                subtitle: context.l10n.support_sub,
-                onTap: () => AppNavigator.push(const _SupportPage()),
               ),
             ),
           ],
@@ -263,17 +248,6 @@ class _DataPage extends StatelessWidget {
     title: context.l10n.data,
     subtitle: context.l10n.data_sub,
     children: _dataTiles(context),
-  );
-}
-
-class _SupportPage extends StatelessWidget {
-  const _SupportPage();
-
-  @override
-  Widget build(BuildContext context) => ExpressScaffold(
-    title: context.l10n.support,
-    subtitle: context.l10n.support_sub,
-    children: _supportTiles(context),
   );
 }
 
@@ -912,39 +886,6 @@ List<Widget> _dataTiles(BuildContext context) {
           subtitle: context.l10n.wipe_data_sub,
           tint: context.tokens.danger,
           onTap: () => SettingsActions.wipeEverything(context),
-        ),
-      ],
-    ),
-  ];
-}
-
-List<Widget> _supportTiles(BuildContext context) {
-  return [
-    ExpressGroup(
-      children: [
-        ExpressTile(
-          icon: LucideIcons.userPlus,
-          title: context.l10n.share_friends,
-          subtitle: context.l10n.share_friends_sub,
-          onTap: () => SettingsActions.shareWithFriend(context),
-        ),
-        ExpressTile(
-          icon: LucideIcons.star,
-          title: context.l10n.github_star_row,
-          subtitle: context.l10n.github_star_sub,
-          onTap: () => SettingsActions.openUrl(context, kGitHubUrl),
-        ),
-        ExpressTile(
-          icon: LucideIcons.coffee,
-          title: context.l10n.buy_coffee,
-          subtitle: context.l10n.buy_coffee_sub,
-          onTap: () => SettingsActions.openUrl(context, kCoffeeUrl),
-        ),
-        ExpressTile(
-          icon: LucideIcons.messageSquare,
-          title: context.l10n.report_issue,
-          subtitle: context.l10n.report_issue_sub,
-          onTap: () => SettingsActions.openUrl(context, '$kIssuesUrl/new'),
         ),
       ],
     ),
