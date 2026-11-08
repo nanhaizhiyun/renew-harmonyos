@@ -4,6 +4,7 @@ class AppClock {
   static int _cutoffHour = 0;
   static DateTime? _today;
   static int _todayUntil = 0;
+  static DateTime? _overrideNow;
 
   static int get cutoffHour => _cutoffHour;
 
@@ -13,9 +14,18 @@ class AppClock {
     _today = null;
   }
 
-  static DateTime now() => _cutoffHour == 0
-      ? DateTime.now()
-      : DateTime.now().subtract(Duration(hours: _cutoffHour));
+  /// Test-only: pins now() so time-window-sensitive flows stay deterministic.
+  /// Null (default) keeps the real wall clock. Tests must reset it via
+  /// addTearDown(() => AppClock.overrideNow = null).
+  static set overrideNow(DateTime? value) {
+    _overrideNow = value;
+    _today = null;
+  }
+
+  static DateTime now() => _overrideNow ??
+      (_cutoffHour == 0
+          ? DateTime.now()
+          : DateTime.now().subtract(Duration(hours: _cutoffHour)));
 
   static DateTime wallNow() => DateTime.now();
 

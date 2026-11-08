@@ -44,6 +44,14 @@ Future<void> _waitFor(WidgetTester tester, Finder target) async {
   }
 }
 
+/// Noon of the real wall-clock day: sessions seeded or logged here end on the
+/// same calendar day (returns within "today", never crossing the midnight
+/// border), so countedOn and split() stay inside today's bucket at any hour.
+DateTime _pinnedNoon() {
+  final wall = AppClock.wallNow();
+  return DateTime(wall.year, wall.month, wall.day, 12);
+}
+
 void main() {
   useEmptyStore();
 
@@ -56,6 +64,8 @@ void main() {
 
   testWidgets('it totals today, the week, the month and everything',
       (tester) async {
+    AppClock.overrideNow = _pinnedNoon();
+    addTearDown(() => AppClock.overrideNow = null);
     final today = AppClock.now();
     await seedHabits(tester, [
       testHabit(id: 'a', name: 'Read'),
@@ -108,6 +118,8 @@ void main() {
   });
 
   testWidgets('a past session can be logged by hand', (tester) async {
+    AppClock.overrideNow = _pinnedNoon();
+    addTearDown(() => AppClock.overrideNow = null);
     await pumpScreen(tester, const FocusHistoryPage());
     expect(find.text('No sessions yet'), findsOneWidget);
 
