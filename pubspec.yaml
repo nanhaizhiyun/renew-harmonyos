@@ -150,7 +150,6 @@ flutter:
   generate: true
 
   assets:
-    - assets/profile_default.jpg
     - assets/icon.png
     - assets/sounds/
     - assets/backgrounds/

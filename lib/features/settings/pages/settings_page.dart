@@ -937,7 +937,7 @@ class _ProfileHeader extends StatelessWidget {
                     image: DecorationImage(
                       image: hasPhoto
                           ? FileImage(File(filePath)) as ImageProvider
-                          : const AssetImage('assets/profile_default.jpg'),
+                          : const AssetImage('assets/icon.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
