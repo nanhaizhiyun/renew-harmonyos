@@ -314,7 +314,8 @@ class _Item extends StatelessWidget {
                 item.label,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                textScaler: TextScaler.noScaling,
+                textScaler:
+                    MediaQuery.textScalerOf(context).clamp(maxScaleFactor: 1.3),
                 style: TextStyle(
                   fontSize: 10.5,
                   height: 1.1,

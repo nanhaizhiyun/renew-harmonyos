@@ -280,7 +280,8 @@ class _ProfileHero extends StatelessWidget {
                     shape: const ExpressBorder(shape: ExpressShape.cookie),
                     image: DecorationImage(
                       image: hasPhoto
-                          ? FileImage(File(filePath)) as ImageProvider
+                          ? ResizeImage(FileImage(File(filePath)), width: 264)
+                              as ImageProvider
                           : const AssetImage('assets/icon.png'),
                       fit: BoxFit.cover,
                     ),

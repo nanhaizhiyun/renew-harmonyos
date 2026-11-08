@@ -331,7 +331,8 @@ class _CustomBackgroundOption extends StatelessWidget {
                   ),
                   image: hasImage
                       ? DecorationImage(
-                          image: FileImage(File(imagePath)),
+                          image: ResizeImage(FileImage(File(imagePath)),
+                              width: 512),
                           fit: BoxFit.cover,
                         )
                       : null,

@@ -936,7 +936,8 @@ class _ProfileHeader extends StatelessWidget {
                     color: scheme.surfaceContainerHighest,
                     image: DecorationImage(
                       image: hasPhoto
-                          ? FileImage(File(filePath)) as ImageProvider
+                          ? ResizeImage(FileImage(File(filePath)), width: 264)
+                              as ImageProvider
                           : const AssetImage('assets/icon.png'),
                       fit: BoxFit.cover,
                     ),
