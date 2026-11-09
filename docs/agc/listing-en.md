@@ -45,7 +45,7 @@ habit tracker, streak, daily habits, todo list, focus timer, offline, no ads, op
 
 - **Category suggestion:** Efficiency
 - **Age rating suggestion:** All ages (lowest tier). Questionnaire points: no violence, no adult content, no user-generated content or social features, no gambling, no in-app purchases, no ads. A pure utility app with no rating-sensitive content.
-- **Version:** versionName 1.0.0 / versionCode 18 — taken from `pubspec.yaml` (`version: 1.0.0+18`), which is the source of truth for the store listing. `ohos/AppScope/app.json5` still carries placeholder values (1.0.0 / 1000000) — versionName now coincides at 1.0.0, but the file is NOT authoritative and versionCode 1000000 is a placeholder; verify the release build via `hdc shell bm dump -n com.rixin.app` before submission (Task 7).
+- **Version:** versionName 1.0.0 / versionCode 18 — taken from `pubspec.yaml` (`version: 1.0.0+18`), which is the source of truth. Stamping is automatic: every `flutter build hap`/`build app` writes the version into `ohos/local.properties`, and the flutter-hvigor plugin injects it into the packaged `app.json5` in memory — the placeholder in the source `ohos/AppScope/app.json5` (1000000 / 1.0.0) never reaches the package. Verified on the debug build: hap `pack.info` = `{"code":18,"name":"1.0.0"}`, device top-level BundleInfo = 18 / 1.0.0. Red line: build via the flutter tool only — a DevEco Studio or raw-hvigor build would bake in the placeholder. Verify the release install via `hdc shell bm dump -n com.rixin.app` top-level fields (Task 7).
 
 ## Permission declarations
 
@@ -64,6 +64,6 @@ habit tracker, streak, daily habits, todo list, focus timer, offline, no ads, op
 - [ ] Placeholders `<FORK-URL>`, `<PRIVACY-POLICY-URL>`, `<ICP-BEIAN>` replaced
 - [ ] Reminder copy depends on Task 3 (notifications) landing; if the submitted build lacks reminders, drop the "Local reminders" bullet and declare INTERNET only
 - [ ] Screenshots taken per `screenshot-shotlist.md` (1320×2760, 4–5 shots)
-- [ ] Version matches `pubspec.yaml` (1.0.0+18), confirmed on the release build via `hdc shell bm dump -n com.rixin.app`
+- [ ] Version matches `pubspec.yaml` (1.0.0+18): on the release install, `hdc shell bm dump -n com.rixin.app` top-level `versionCode: 18` / `versionName: 1.0.0` (the 0/"" pairs inside the `appQuickFix` node are patch metadata, always zero — not the version)
 - [ ] The share link in all 17 `share_friends_message` strings still points to the upstream site https://inlitx.github.io/streak/ — swap to the Renew repo/mirror URL once the fork repo exists
 - [ ] (Optional) `lib/app/startup_failure.dart` feedback URL points to upstream issues — consider pointing it at the fork tracker at submission
