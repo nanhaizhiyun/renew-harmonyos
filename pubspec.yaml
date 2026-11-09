@@ -90,6 +90,15 @@ dependency_overrides:
       url: https://gitcode.com/openharmony-sig/flutter_packages.git
       path: packages/image_picker/image_picker_ohos
       ref: 1af98579e1a95d4fca19e422d26f5b6856ac38ba
+  # FLN ohos: SIG fork of 19.5.0 — same Dart API plus the ohos platform
+  # implementation (ArkTS plugin auto-registered via GeneratedPluginRegistrant).
+  # Lights the reminder system on ohos (T3); linux/windows/platform_interface
+  # siblings still resolve from hosted.
+  flutter_local_notifications:
+    git:
+      url: https://gitcode.com/openharmony-sig/fluttertpc_flutter_local_notifications.git
+      path: flutter_local_notifications
+      ref: 284b11c5d8675901acc727b0572f3eb0ef71c256 # br_v19.5.0_ohos
   permission_handler:
     git:
       url: https://gitcode.com/openharmony-sig/flutter_permission_handler.git

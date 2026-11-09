@@ -28,7 +28,7 @@ bool get hasHomeWidgets =>
 
 bool get hasBiometricLock => !Platform.isLinux && !_ohos;
 
-bool get hasReminders => !_ohos;
+bool get hasReminders => true; // ohos reminders lit via SIG FLN fork (T3)
 
 bool get isFlatpak => Platform.environment.containsKey('FLATPAK_ID');
 

@@ -67,7 +67,7 @@ void main() {
     addTearDown(() => setOhosForTest(false));
     setOhosForTest(true);
     expect(isMobile, isTrue);
-    expect(hasReminders, isFalse);
+    expect(hasReminders, isTrue); // reminders lit on ohos (T3)
     expect(hasAppIcons, isFalse);
     expect(hasHomeWidgets, isFalse);
     expect(hasBiometricLock, isFalse);
