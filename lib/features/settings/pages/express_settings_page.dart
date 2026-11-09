@@ -933,7 +933,7 @@ class _FooterState extends State<_Footer> {
         ),
         const SizedBox(height: 14),
         Text(
-          'STREAK $_version'.trim(),
+          '${context.l10n.brandName} $_version'.trim(),
           style: ExpressType.body.at(
             12,
             weight: 800,

@@ -120,7 +120,7 @@ class _FooterState extends State<_Footer> {
     return Column(
       children: [
         Text(
-          'STREAK',
+          context.l10n.brandName,
           style: TextStyle(
             fontSize: 11,
             fontWeight: FontWeight.w800,
