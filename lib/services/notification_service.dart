@@ -5,13 +5,13 @@ import 'dart:ui' show PlatformDispatcher;
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:streak/core/i18n/app_locale.dart';
 import 'package:streak/core/database/local_store.dart';
 import 'package:streak/core/extensions/date_extensions.dart';
 import 'package:streak/core/utils/amount_format.dart';
 import 'package:streak/core/utils/app_dirs.dart';
+import 'package:streak/core/utils/ohos_timezone.dart';
 import 'package:streak/features/habits/data/completion.dart';
 import 'package:streak/features/habits/data/completion_ops.dart';
 import 'package:streak/features/habits/data/habit.dart';
@@ -178,8 +178,8 @@ class NotificationService {
     if (_ready) return;
 
     tz.initializeTimeZones();
-    final zone = await FlutterTimezone.getLocalTimezone();
-    tz.setLocalLocation(_localZone(zone.identifier));
+    final zone = await getPlatformTimeZoneName();
+    tz.setLocalLocation(_localZone(zone));
 
     const android = AndroidInitializationSettings('ic_stat_notify');
     final darwin = DarwinInitializationSettings(
