@@ -54,16 +54,17 @@
 | `ohos.permission.INTERNET` | 运行框架所需普通权限（安装即授予）。应用完全离线，不传输用户数据。 |
 | `ohos.permission.POST_NOTIFICATIONS` | 本地提醒通知（设备本地排定，不经过服务器，不用于营销）。 |
 
-## 隐私政策与备案
+## 隐私政策
 
-- **隐私政策 URL：** `<PRIVACY-POLICY-URL>`（建仓后挂 Gitee 镜像，境内可达；提审前必须可访问）
-- **ICP 备案号：** `<ICP-BEIAN>`（备案通过后填入）
+- **隐私政策 URL：** `<PRIVACY-POLICY-URL>`（托管方案后定：GitHub Pages 或 Gitee 镜像，境内可达；提审前必须可访问）
+- **隐私联系方式：** `<PRIVACY-CONTACT>`（开发者邮箱）
 
 ## 发布前检查
 
-- [ ] `<FORK-URL>`、`<PRIVACY-POLICY-URL>`、`<ICP-BEIAN>` 占位符已替换
-- [ ] 提醒文案依赖 Task 3 通知系统落地；若提审版不含提醒，删“本地提醒”一条，权限申报改为仅 INTERNET
-- [ ] 截图按 `screenshot-shotlist.md` 拍摄并上传（1320×2760，4–5 张）
+- [x] 仓库 URL 占位符已替换 → https://github.com/nanhaizhiyun/renew-harmonyos
+- [ ] `<PRIVACY-POLICY-URL>`（托管后填，提审前必须可访问）与 `<PRIVACY-CONTACT>` 提审粘贴时填入
+- [ ] 提醒文案保留（通知系统已随 3249410+2824bad 落地构建）；AGC release 渠道验证端到端触发
+- [x] 截图已备好（store-screenshots 工具链，zh/en 各 8 张 1920×1080）；以 AGC 上传页尺寸校验为准
 - [ ] 版本号与 `pubspec.yaml`（1.0.0+18）一致：发布安装后 `hdc shell bm dump -n com.rixin.app` 顶层 `versionCode: 18` / `versionName: 1.0.0`（`appQuickFix` 节点内的 0/"" 是热修复元数据，恒为 0，不是版本字段）
-- [ ] 全部 17 个语言的 `share_friends_message` 分享链接仍指向上游站 https://inlitx.github.io/streak/ —— fork 仓库建好后统一替换为 Renew 仓库/镜像地址
+- [x] 全部 18 个 arb 的分享链接已替换 → https://github.com/nanhaizhiyun/renew-harmonyos
 - [ ] （可选）`lib/app/startup_failure.dart` 的反馈地址指向 upstream issues —— 提审时可换为 fork 仓库 issues

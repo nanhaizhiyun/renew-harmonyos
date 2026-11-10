@@ -54,16 +54,17 @@ habit tracker, streak, daily habits, todo list, focus timer, offline, no ads, op
 | `ohos.permission.INTERNET` | Normal install-time permission required by the app runtime. The app is fully offline and transmits no user data. |
 | `ohos.permission.POST_NOTIFICATIONS` | Local reminder notifications (scheduled on-device, never pass through a server, never used for marketing). |
 
-## Privacy policy & filing
+## Privacy policy
 
-- **Privacy policy URL:** `<PRIVACY-POLICY-URL>` (hosted on the Gitee mirror once the public repo exists; must be reachable before submission)
-- **ICP filing number:** `<ICP-BEIAN>` (fill in after the filing is approved)
+- **Privacy policy URL:** `<PRIVACY-POLICY-URL>` (hosting to be decided: GitHub Pages or a Gitee mirror, reachable from mainland; must be live before submission)
+- **Privacy contact:** `<PRIVACY-CONTACT>` (developer email)
 
 ## Pre-submit checklist
 
-- [ ] Placeholders `<FORK-URL>`, `<PRIVACY-POLICY-URL>`, `<ICP-BEIAN>` replaced
-- [ ] Reminder copy depends on Task 3 (notifications) landing; if the submitted build lacks reminders, drop the "Local reminders" bullet and declare INTERNET only
-- [ ] Screenshots taken per `screenshot-shotlist.md` (1320×2760, 4–5 shots)
+- [x] Repo URL placeholder replaced → https://github.com/nanhaizhiyun/renew-harmonyos
+- [ ] `<PRIVACY-POLICY-URL>` (after hosting; must be reachable before submission) and `<PRIVACY-CONTACT>` pasted at submit time
+- [ ] Reminder copy kept (notification system shipped in-build via 3249410+2824bad); verify end-to-end firing on the AGC release channel
+- [x] Screenshots ready (store-screenshots toolchain, 8 × 1920×1080 per language); AGC upload-page size validation governs
 - [ ] Version matches `pubspec.yaml` (1.0.0+18): on the release install, `hdc shell bm dump -n com.rixin.app` top-level `versionCode: 18` / `versionName: 1.0.0` (the 0/"" pairs inside the `appQuickFix` node are patch metadata, always zero — not the version)
-- [ ] The share link in all 17 `share_friends_message` strings still points to the upstream site https://inlitx.github.io/streak/ — swap to the Renew repo/mirror URL once the fork repo exists
+- [x] Share link swapped in all 18 arb locales → https://github.com/nanhaizhiyun/renew-harmonyos
 - [ ] (Optional) `lib/app/startup_failure.dart` feedback URL points to upstream issues — consider pointing it at the fork tracker at submission

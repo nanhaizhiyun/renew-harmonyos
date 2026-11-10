@@ -2,10 +2,10 @@
 
 本应用不收集任何信息。这一页说明日新如何处理数据。
 
-- **更新日期：** `<UPDATE-DATE>`
+- **更新日期：** `2026-11-10`
 - **开发者：** chenbf（个人开发者）
 - **联系方式：** `<PRIVACY-CONTACT>`
-- **源代码：** `<FORK-URL>`（基于开源项目 [Streak](https://github.com/InlitX/streak) by InlitX，GNU GPLv3；本应用为其 HarmonyOS 适配版）
+- **源代码：** `https://github.com/nanhaizhiyun/renew-harmonyos`（基于开源项目 [Streak](https://github.com/InlitX/streak) by InlitX，GNU GPLv3；本应用为其 HarmonyOS 适配版）
 
 ---
 
@@ -49,9 +49,9 @@
 
 Renew does not collect anything.
 
-- **Last updated:** `<UPDATE-DATE>`
+- **Last updated:** `2026-11-10`
 - **Developer:** chenbf (individual developer) · Contact: `<PRIVACY-CONTACT>`
-- **Source code:** `<FORK-URL>` — a HarmonyOS adaptation of [Streak](https://github.com/InlitX/streak) by InlitX, GNU GPLv3.
+- **Source code:** `https://github.com/nanhaizhiyun/renew-harmonyos` — a HarmonyOS adaptation of [Streak](https://github.com/InlitX/streak) by InlitX, GNU GPLv3.
 
 **Data collected:** none. Renew has no accounts, no sign-up, no cloud servers, and embeds no ad or analytics SDKs. The app never sends your data over the network.
 
