@@ -8,25 +8,26 @@
 | Field | Content |
 |---|---|
 | App name | Renew |
-| One-liner | Small daily check-ins that turn into habits you keep. |
+| One-liner | Minimal habit tracker. Streaks at a glance. |
 | Short description | Renew is an offline, open-source habit tracker: unlimited habits and streaks, a todo list, a focus timer, and statistics. No ads, no subscriptions, no accounts — everything stays on your phone. |
 
 ## Full description (paste block)
 
 ```text
-Small daily check-ins that turn into habits you keep.
+Minimal habit tracker. Streaks at a glance.
 
-Renew is a free, open-source, fully offline habit tracker that helps you turn the things you want to keep doing into a natural part of every day.
+Renew is a free, open-source, fully offline habit tracker: it turns the things you want to keep doing into a natural part of every day, and makes every bit of persistence visible.
 
 [Core features]
-• Habits & streaks: create as many as you want, watch streaks grow day by day
-• Categories: organize habits with colors and categories
+• Habit check-ins: create as many as you like — one tap marks today done
+• Streaks: watch unbroken days grow, day by day
+• Categories: colors and categories keep habits organized
 • Habit notes: jot down a line about any day
 • Todo list: capture what needs doing today
 • Focus timer: set aside time for one thing
-• Statistics: charts and streak curves make persistence visible
+• Statistics: streak curves and charts make progress easy to see
 • Local reminders: on-device notifications, no internet needed
-• Backup & export: one-tap zip / JSON export, your data always leaves with you
+• Backup & export: one-tap zip / JSON export — your data always leaves with you
 
 [Privacy]
 • No accounts, no sign-up, no cloud
