@@ -210,6 +210,7 @@ class NotificationService {
         iOS: darwin,
         windows: windows,
         linux: linux,
+        ohos: const OhosInitializationSettings('icon'),
       ),
       onDidReceiveNotificationResponse: _handleResponse,
       onDidReceiveBackgroundNotificationResponse: notificationActionEntrypoint,
@@ -259,6 +260,16 @@ class NotificationService {
 
   Future<bool> requestNotifications() async {
     if (Platform.isLinux || Platform.isWindows) return true;
+    if (isOhos) {
+      try {
+        return await const MethodChannel('rixin/notification_permission')
+                .invokeMethod<bool>('request') ??
+            false;
+      } catch (e) {
+        debugPrint('Ohos notification permission request failed: $e');
+        return false;
+      }
+    }
     try {
       if (await Permission.notification.isGranted) return true;
       return (await Permission.notification.request()).isGranted;
@@ -280,8 +291,17 @@ class NotificationService {
     return true;
   }
 
+  /// Diagnostic: last scheduling failure, surfaced on the habit form after save.
+  String? lastScheduleError;
+
   Future<void> scheduleFor(Habit habit) async {
-    if (!_ready) await initialize();
+    lastScheduleError = null;
+    try {
+      if (!_ready) await initialize();
+    } catch (e) {
+      lastScheduleError = 'init: $e';
+      rethrow;
+    }
     if (habit.isOnVacation || habit.isArchived) {
       await cancelFor(habit.id);
       return;
@@ -291,6 +311,7 @@ class NotificationService {
       try {
         live.addAll(await _schedule(habit, reminder));
       } catch (e) {
+        lastScheduleError = '$e';
         debugPrint('Scheduling ${habit.name} / ${reminder.id} failed: $e');
       }
     }
@@ -801,6 +822,11 @@ class NotificationService {
           categoryIdentifier: _categoryFor(habit),
           threadIdentifier: habit.id,
         ),
+        ohos: const OhosNotificationDetails(
+          OhosNotificationSlotType.OTHER_TYPES,
+          icon: 'icon',
+          importance: OhosImportance.high,
+        ),
       );
   }
 
@@ -844,6 +870,11 @@ class NotificationService {
             importance: Importance.max,
             priority: Priority.high,
           ),
+          ohos: OhosNotificationDetails(
+            OhosNotificationSlotType.OTHER_TYPES,
+            icon: 'icon',
+            importance: OhosImportance.high,
+          ),
         ),
       );
     } catch (_) {}
@@ -863,7 +894,14 @@ class NotificationService {
                 images: await _windowsLogo(LocalStore.habit(habitId)),
               ),
             )
-          : null;
+          : isOhos
+              ? NotificationDetails(
+                  ohos: const OhosNotificationDetails(
+                    OhosNotificationSlotType.OTHER_TYPES,
+                    icon: 'icon',
+                  ),
+                )
+              : null;
       await _plugin.show(_focusEndId, title, body, details);
     } catch (e) {
       debugPrint('Focus end notice failed: $e');
@@ -958,6 +996,11 @@ class NotificationService {
                 ],
               )
             : null,
+        ohos: const OhosNotificationDetails(
+          OhosNotificationSlotType.OTHER_TYPES,
+          icon: 'icon',
+          importance: OhosImportance.high,
+        ),
       ),
       payload: '$_todoPayload${todo.id}',
     );

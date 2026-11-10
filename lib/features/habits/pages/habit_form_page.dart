@@ -498,6 +498,19 @@ class _HabitFormPageState extends State<HabitFormPage> {
         restDays: template?.restDays ?? const [],
       );
     }
+    final service = NotificationService();
+    // Surface scheduling failures on ohos only: host/desktop scheduling has its
+    // own plugin lifecycle, and widget tests run without plugin mocks.
+    final scheduleError = isOhos ? service.lastScheduleError : null;
+    // Consume once so a failed save never poisons a later save (the singleton
+    // persists across saves, and create() skips scheduleFor without reminders).
+    service.lastScheduleError = null;
+    if (scheduleError != null) {
+      if (mounted) {
+        AppSnackbar.error(context, 'Scheduling error: $scheduleError');
+      }
+      return;
+    }
     if (healthSteps) unawaited(HealthSteps.sync(controller));
     AppNavigator.pop();
   }
