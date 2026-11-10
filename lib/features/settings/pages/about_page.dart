@@ -14,6 +14,7 @@ import 'package:streak/core/express/express_type.dart';
 import 'package:streak/core/minimal/minimal_type.dart';
 
 const _kGitHubUrl = 'https://github.com/InlitX/streak';
+const _kForkUrl = 'https://github.com/nanhaizhiyun/renew-harmonyos';
 const _base = Duration(milliseconds: 340);
 
 class AboutPage extends StatefulWidget {
@@ -145,6 +146,14 @@ class _AboutPageState extends State<AboutPage> {
               child: _MadeBy(onTap: () => _open(_kGitHubUrl)),
             ),
           ),
+          const SizedBox(height: 12),
+          Entrance(
+            index: 4,
+            delay: _base,
+            child: Center(
+              child: _ViewSource(onTap: () => _open(_kForkUrl)),
+            ),
+          ),
         ],
       ),
     );
@@ -196,6 +205,34 @@ class _MadeBy extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
             style: style,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ViewSource extends StatelessWidget {
+  const _ViewSource({required this.onTap});
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = context.colors;
+    return Semantics(
+      link: true,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(8),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          child: Text(
+            context.l10n.view_source,
+            style: TextStyle(
+              fontSize: 13,
+              color: scheme.onSurface.withValues(alpha: 0.6),
+            ),
           ),
         ),
       ),

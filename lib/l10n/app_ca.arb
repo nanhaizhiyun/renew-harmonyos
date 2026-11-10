@@ -78,7 +78,7 @@
       }
     }
   },
-  "share_friends_message": "Mantinc les meues ratxes actives amb Renew: una aplicació senzilla, gratuïta i que funciona sense connexió per fer seguiment d'hàbits, sense comptes ni anuncis. Vine a crear la teua: https://inlitx.github.io/streak/",
+  "share_friends_message": "Mantinc les meues ratxes actives amb Renew: una aplicació senzilla, gratuïta i que funciona sense connexió per fer seguiment d'hàbits, sense comptes ni anuncis. Vine a crear la teua: https://github.com/nanhaizhiyun/renew-harmonyos",
   "pin_recovery_body": "Si oblides el PIN, aquest codi obre Renew i desactiva el bloqueig. Guarda'l en un lloc segur: no es tornarà a mostrar.",
   "focus_delete_sessions_body": "{count, plural, =1{S'eliminarà 1 sessió de concentració. Aquesta acció no es pot desfer.} other{S'eliminaran {count} sessions de concentració. Aquesta acció no es pot desfer.}}",
   "@focus_delete_sessions_body": {

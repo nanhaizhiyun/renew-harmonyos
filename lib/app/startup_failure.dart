@@ -46,7 +46,8 @@ class StartupFailure extends StatelessWidget {
                           'through Controlled folder access, add Streak.exe and '
                           'open Renew again.'
                       : 'Nothing has been lost. Please send this message to '
-                          'github.com/InlitX/streak/issues so it can be fixed.',
+                          'github.com/nanhaizhiyun/renew-harmonyos/issues so it '
+                          'can be fixed.',
                   textAlign: TextAlign.center,
                   style: const TextStyle(color: Colors.white70, fontSize: 14),
                 ),

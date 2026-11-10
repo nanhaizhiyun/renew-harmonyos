@@ -36,8 +36,8 @@ import 'package:streak/services/import_service.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-const kGitHubUrl = 'https://github.com/InlitX/streak';
-const kIssuesUrl = 'https://github.com/InlitX/streak/issues';
+const kGitHubUrl = 'https://github.com/nanhaizhiyun/renew-harmonyos';
+const kIssuesUrl = 'https://github.com/nanhaizhiyun/renew-harmonyos/issues';
 const kCoffeeUrl = 'https://ko-fi.com/inlitx';
 const kSiteUrl = 'https://inlitx.github.io/streak';
 
