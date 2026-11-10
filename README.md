@@ -1,5 +1,5 @@
 > [!NOTE]
-> **Fork declaration:** This repository, **Renew (日新)**, is a fork of [**Streak**](https://github.com/InlitX/streak) by [InlitX](https://github.com/InlitX), licensed under the **GNU GPLv3**. It is an independent **HarmonyOS adaptation by chenbf**, modified in **2026**. Upstream: https://github.com/InlitX/streak · This fork: `https://github.com/nanhaizhiyun/renew-harmonyos`
+> **Fork declaration:** This repository, **Renew (不止习惯)**, is a fork of [**Streak**](https://github.com/InlitX/streak) by [InlitX](https://github.com/InlitX), licensed under the **GNU GPLv3**. It is an independent **HarmonyOS adaptation by chenbf**, modified in **2026**. Upstream: https://github.com/InlitX/streak · This fork: `https://github.com/nanhaizhiyun/renew-harmonyos`
 
 <div align="center">
 
