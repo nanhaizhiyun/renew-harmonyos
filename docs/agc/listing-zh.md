@@ -67,5 +67,5 @@
 - [ ] 提醒文案保留（通知系统已随 3249410+2824bad 落地构建）；AGC release 渠道验证端到端触发
 - [x] 截图已备好（store-screenshots 工具链，zh/en 各 8 张 1920×1080）；以 AGC 上传页尺寸校验为准
 - [ ] 版本号与 `pubspec.yaml`（1.0.0+18）一致：发布安装后 `hdc shell bm dump -n com.rixin.app` 顶层 `versionCode: 18` / `versionName: 1.0.0`（`appQuickFix` 节点内的 0/"" 是热修复元数据，恒为 0，不是版本字段）
-- [x] 全部 18 个 arb 的分享链接已替换 → https://github.com/nanhaizhiyun/renew-harmonyos
+- [x] 全部 18 个 arb 的分享链接已替换 → https://github.com/InlitX/streak(2026-11-13:应用内源码/分享链接统一指向上游 Streak;本清单上方仓库 URL = fork,即本移植版二进制的 GPL 源码 offer 所在)
 - [ ] （可选）`lib/app/startup_failure.dart` 的反馈地址指向 upstream issues —— 提审时可换为 fork 仓库 issues
