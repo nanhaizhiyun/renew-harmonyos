@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 import 'dart:math';
 import 'dart:ui' show PlatformDispatcher;
 
@@ -40,6 +40,22 @@ class NotificationService {
   static const _channelName = 'Habit Reminders';
   static String get windowsAppId =>
       isPortable ? 'com.streak.app.portable' : 'com.streak.app';
+
+  /// Shared Ohos reminder slot configuration for every reminder notification.
+  ///
+  /// On HarmonyOS NEXT the slot level defaults from the slot type (official
+  /// SlotType table: OTHER_TYPES -> LEVEL_MIN = drawer-only, no banner, no
+  /// sound; SERVICE_INFORMATION -> LEVEL_HIGH = banner + sound), and apps
+  /// cannot set a level via API (notificationManager only offers type-only
+  /// addSlot overloads). Reminders therefore must publish into
+  /// SERVICE_INFORMATION — the only app-side lever that yields a banner.
+  /// The plugin rebuilds an existing slot only when
+  /// [OhosNotificationSlotAction.update] is set, and such a rebuild can wipe
+  /// the user's per-category choices, so the default createIfNotExists must
+  /// stay — never request a slot rebuild here.
+  static const ohosReminderDetails = OhosNotificationDetails(
+    OhosNotificationSlotType.SERVICE_INFORMATION,
+  );
 
   static const actionDone = 'habit_done';
   static const actionSnooze = 'habit_snooze';
@@ -241,6 +257,9 @@ class NotificationService {
     if (isPortable) await _plugin.cancelAll();
     if (_keepsPayloads) await _loadPayloads();
     await _repairStore();
+    if (isOhos) await _rearmAfterRepeatFix();
+    if (isOhos) await _resetQuotaAfterPayloadFix();
+    if (isOhos) await _switchReminderSlotAfterLevelFix();
 
     _ready = true;
 
@@ -256,6 +275,59 @@ class NotificationService {
       debugPrint('Scheduled notification store unreadable, resetting: $e');
       await cancelAll();
     }
+  }
+
+  /// One-shot migration: reminders published before the repeat-semantics fix
+  /// carry masks that fire daily (a weekly Monday reminder rang every day)
+  /// and the per-weekday expansion filled the 30-reminder system quota
+  /// (error 1700002). Clearing the armed keys makes the next launch's
+  /// rescheduleReminders republish every reminder with correct masks and
+  /// within quota.
+  Future<void> _rearmAfterRepeatFix() async {
+    if (LocalStore.setting('reminderRepeatFixApplied', false)) return;
+    await LocalStore.writeSetting('habitRemindersArmedOn', '');
+    await LocalStore.writeSetting('todoRemindersArmedOn', '');
+    await LocalStore.writeSetting('reminderRepeatFixApplied', true);
+  }
+
+  /// One-shot migration: pending reminders published by older plugin builds
+  /// may carry no payload in their wantAgent parameters, so payload matching
+  /// can never find (and cancel) them; the 30-reminder quota then stays full
+  /// and every publish fails with 1700002. reminderAgentManager
+  /// .cancelAllReminders is scoped to this app, so wiping all of its
+  /// reminders and notifications is safe; clearing the armed keys makes the
+  /// next launch's rescheduleReminders republish everything within budget
+  /// from a clean slate.
+  Future<void> _resetQuotaAfterPayloadFix() async {
+    if (LocalStore.setting('reminderPayloadFixApplied', false)) return;
+    await _plugin.cancelAll();
+    await LocalStore.writeSetting('habitRemindersArmedOn', '');
+    await LocalStore.writeSetting('todoRemindersArmedOn', '');
+    await LocalStore.writeSetting('reminderPayloadFixApplied', true);
+  }
+
+  /// One-shot migration: reminders were published into the OTHER_TYPES slot,
+  /// whose default level on HarmonyOS NEXT is LEVEL_MIN — drawer-only, never
+  /// a banner (official SlotType table). The slot level cannot be raised via
+  /// API, so reminders move to the SERVICE_INFORMATION slot, whose default
+  /// level is LEVEL_HIGH (banner + sound). Old reminders carry the old slot
+  /// type inside their stored request, so they must be republished: wiping
+  /// reminders and notifications (both app-scoped) and clearing the armed
+  /// keys makes the next launch's rescheduleReminders do exactly that. The
+  /// abandoned OTHER_TYPES slot is removed so 设置 lists a single category.
+  Future<void> _switchReminderSlotAfterLevelFix() async {
+    if (LocalStore.setting('reminderSlotTypeFixApplied', false)) return;
+    try {
+      final ohos = _plugin.resolvePlatformSpecificImplementation<
+          OhosFlutterLocalNotificationsPlugin>();
+      await ohos?.deleteNotificationSlot(OhosNotificationSlotType.OTHER_TYPES);
+    } catch (e) {
+      debugPrint('Ohos legacy slot removal failed: $e');
+    }
+    await _plugin.cancelAll();
+    await LocalStore.writeSetting('habitRemindersArmedOn', '');
+    await LocalStore.writeSetting('todoRemindersArmedOn', '');
+    await LocalStore.writeSetting('reminderSlotTypeFixApplied', true);
   }
 
   Future<bool> requestNotifications() async {
@@ -307,6 +379,18 @@ class NotificationService {
       return;
     }
     final live = <int>{};
+    if (isOhos) {
+      // The publish loop below can only succeed while the 30-reminder quota
+      // has room. Cancelling this habit's stale records first guarantees the
+      // save frees quota before it spends it, even when every previous save
+      // left the quota full (pending payloads were dropped by the plugin
+      // until the pending-mapping fix, so stale records accumulated).
+      try {
+        await _cancelExcept(habit.id, const <int>{});
+      } catch (e) {
+        debugPrint('Could not cancel stale ${habit.name} reminders: $e');
+      }
+    }
     for (final reminder in habit.reminders) {
       try {
         live.addAll(await _schedule(habit, reminder));
@@ -455,7 +539,7 @@ class NotificationService {
     final days = daily
         ? const [1]
         : [for (final day in reminder.days) if (habit.ringsOnWeekday(day)) day];
-    final cap = ReminderSchedule.hourlyCap(days.length);
+    final cap = ReminderSchedule.hourlyCapFor(days.length, ohosQuota: isOhos);
     final slots = ReminderSchedule.hourlySlots(
       hour: reminder.hour,
       minute: reminder.minute,
@@ -528,8 +612,12 @@ class NotificationService {
     return ids;
   }
 
+  /// A reminder ringing every weekday repeats as a single daily record on iOS
+  /// and OHOS (both APIs express daily recurrence natively — and OHOS caps
+  /// valid reminders at 30 per app, so the per-weekday expansion is too
+  /// expensive); Android and desktop expand one record per weekday.
   bool _repeatsDaily(Habit habit, Reminder reminder) =>
-      Platform.isIOS &&
+      (Platform.isIOS || isOhos) &&
       reminder.days.length == 7 &&
       Iterable<int>.generate(7, (i) => i + 1).every(habit.ringsOnWeekday);
 
@@ -623,7 +711,9 @@ class NotificationService {
       from: _firstMoment(habit),
       due: (day) => !habit.isOffDay(day),
       slots: slots,
-      limit: Platform.isIOS ? 8 : ReminderSchedule.slotsPerReminder,
+      limit: Platform.isIOS || isOhos
+          ? ReminderSchedule.ohosSlotsPerReminder
+          : ReminderSchedule.slotsPerReminder,
     );
     final ids = <int>{};
     for (final (index, at) in moments.indexed) {
@@ -822,11 +912,7 @@ class NotificationService {
           categoryIdentifier: _categoryFor(habit),
           threadIdentifier: habit.id,
         ),
-        ohos: const OhosNotificationDetails(
-          OhosNotificationSlotType.OTHER_TYPES,
-          icon: 'icon',
-          importance: OhosImportance.high,
-        ),
+        ohos: ohosReminderDetails,
       );
   }
 
@@ -870,11 +956,7 @@ class NotificationService {
             importance: Importance.max,
             priority: Priority.high,
           ),
-          ohos: OhosNotificationDetails(
-            OhosNotificationSlotType.OTHER_TYPES,
-            icon: 'icon',
-            importance: OhosImportance.high,
-          ),
+          ohos: ohosReminderDetails,
         ),
       );
     } catch (_) {}
@@ -896,10 +978,7 @@ class NotificationService {
             )
           : isOhos
               ? NotificationDetails(
-                  ohos: const OhosNotificationDetails(
-                    OhosNotificationSlotType.OTHER_TYPES,
-                    icon: 'icon',
-                  ),
+                  ohos: ohosReminderDetails,
                 )
               : null;
       await _plugin.show(_focusEndId, title, body, details);
@@ -996,11 +1075,7 @@ class NotificationService {
                 ],
               )
             : null,
-        ohos: const OhosNotificationDetails(
-          OhosNotificationSlotType.OTHER_TYPES,
-          icon: 'icon',
-          importance: OhosImportance.high,
-        ),
+        ohos: ohosReminderDetails,
       ),
       payload: '$_todoPayload${todo.id}',
     );
@@ -1032,7 +1107,15 @@ class NotificationService {
       final payload = n.payload;
       if (payload == null || payload.isEmpty) continue;
       if (payload.startsWith(_todoPayload)) continue;
-      if (!liveHabitIds.contains(payload)) await _cancel(n.id);
+      if (!liveHabitIds.contains(payload)) {
+        // One failing cancel must not abort cleanup: a full pending list
+        // blocks every publish behind the 30-reminder quota, so keep going.
+        try {
+          await _cancel(n.id);
+        } catch (e) {
+          debugPrint('Could not cancel orphan notification ${n.id}: $e');
+        }
+      }
     }
   }
 
@@ -1049,7 +1132,13 @@ class NotificationService {
     final pending = await _pending();
     for (final n in pending) {
       if (n.payload == habitId && !keep.contains(n.id)) {
-        await _cancel(n.id);
+        // Per-item tolerance: one failing cancel must not strand the rest —
+        // on OHOS uncancelled stale records keep the 30-reminder quota full.
+        try {
+          await _cancel(n.id);
+        } catch (e) {
+          debugPrint('Could not cancel stale notification ${n.id}: $e');
+        }
       }
     }
   }

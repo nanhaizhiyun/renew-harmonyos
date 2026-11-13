@@ -3,6 +3,14 @@ class ReminderSchedule {
 
   static const slotsPerReminder = 64;
 
+  /// OHOS caps valid reminders at 30 per app (error 1700002), so scheduling
+  /// stays inside a budget: one-shot horizons and hourly slot totals are far
+  /// smaller than on unbounded platforms. The app re-arms one-shot reminders
+  /// on every launch, so a short horizon still keeps reminders flowing.
+  static const ohosSlotsPerReminder = 8;
+
+  static const ohosHourlyTotalCap = 12;
+
   static const quietWeeks = 4;
 
   static const _quietIdBase = 100000000;
@@ -19,6 +27,13 @@ class ReminderSchedule {
   static const _dayMinutes = 24 * 60;
 
   static int hourlyCap(int days) => slotsPerReminder ~/ (days < 1 ? 1 : days);
+
+  /// Per-day slot cap for hourly reminders. On OHOS the total across all days
+  /// is budgeted ([ohosHourlyTotalCap]); elsewhere the unbounded-platform
+  /// [hourlyCap] applies.
+  static int hourlyCapFor(int days, {required bool ohosQuota}) => ohosQuota
+      ? (days < 1 ? ohosHourlyTotalCap : ohosHourlyTotalCap ~/ days)
+      : hourlyCap(days);
 
   static List<int> hourlySlots({
     required int hour,
