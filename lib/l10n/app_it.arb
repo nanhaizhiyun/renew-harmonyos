@@ -246,7 +246,7 @@
   "archive": "Archivia",
   "share_friends": "Condividi con un amico",
   "share_friends_sub": "Invia l'app",
-  "share_friends_message": "Sto mantenendo vive le mie serie consecutive con Renew — un piccolo tracker delle abitudini gratuito e utilizzabile offline, senza account né pubblicità. Vieni a crearne uno anche tu: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "Sto mantenendo vive le mie serie consecutive con Renew — un piccolo tracker delle abitudini gratuito e utilizzabile offline, senza account né pubblicità. Vieni a crearne uno anche tu: https://github.com/InlitX/streak",
   "copy_message": "Copia messaggio",
   "message_copied": "Messaggio copiato",
   "app_lock": "Blocco app",
@@ -461,7 +461,7 @@
   "rate_github_sub": "Supporta il progetto con una valutazione",
   "buy_coffee": "Comprami un caffè",
   "buy_coffee_sub": "Aiuta a tenere l'applicazione gratuita",
-  "view_source": "Visualizza il codice sorgente su GitHub",
+  "view_source": "Vedi il codice",
   "about_title": "Costruito per te. Gratuito, per sempre.",
   "about_footer": "Fatto con ☕ e molto tempo libero.",
   "about_body": "Renew è nata da un’idea semplice: perché pagare per tenere traccia delle proprie abitudini?\n\nQuesta app è completamente open source. Chiunque può vedere esattamente come funziona, suggerire miglioramenti o persino creare la propria versione. Niente “scatole nere”. Niente sorprese.\n\nLa tua privacy è totale: tutto rimane sul tuo telefono. Niente account, niente server, niente pubblicità. Nemmeno un byte esce dal tuo dispositivo.\n\nNessun limite. Crea tutte le abitudini che vuoi. Nessun abbonamento, nessuna “versione pro”, nessun pop-up che ti chieda di pagare. Mai.\n\nSe l’app ti è utile, puoi sostenerla con una stella su GitHub o offrendomi un caffè. Ma è del tutto facoltativo: l’app è tua in ogni caso.",
@@ -523,5 +523,7 @@
   "add_category": "Nuovo",
   "delete_category": "Elimina categoria",
   "edit": "Modifica",
-  "cover_image": "Immagine di copertina"
+  "cover_image": "Immagine di copertina",
+  "link_open_failed": "Impossibile aprire il collegamento",
+  "copy_link": "Copia collegamento"
 }

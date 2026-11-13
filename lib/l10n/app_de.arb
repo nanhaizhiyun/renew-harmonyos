@@ -36,7 +36,7 @@
   "onb1_body": "Trage deine Gewohnheit mit nur einem Tipp ein und sieh zu, wie du jeden Tag weiterkommst.",
   "kind_negative_hint": "Jeder Tag zählt standardmäßig als clean — deine Serie wächst von alleine. Tippe nur auf das Häckchen, wenn du einen Ausrutscher hattest; der Tag wird rot und du kannst es rückgängig machen.",
   "monthly": "Monatlich",
-  "view_source": "Quellcode auf GitHub ansehen",
+  "view_source": "Code ansehen",
   "add_image": "Bild hinzufügen",
   "widget_cfg_change_image": "Bild ändern",
   "freq_per_month_short": "{n}×/Monat",
@@ -596,7 +596,7 @@
   "widget_cfg_style_card": "Karte",
   "bg_gradient": "Übergang",
   "focus_target_reached": "Ziel erreicht",
-  "share_friends_message": "Ich verfolge meine Serien mit Renew – einem kleinen, kostenlosen, offline Gewohnheits-Tracker ohne Werbung. Bau auch du deine Serien mit Renew: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "Ich verfolge meine Serien mit Renew – einem kleinen, kostenlosen, offline Gewohnheits-Tracker ohne Werbung. Bau auch du deine Serien mit Renew: https://github.com/InlitX/streak",
   "note_kind_completed": "Abgeschlossen",
   "focus_break": "Pause",
   "undo": "Rückgängig",
@@ -1427,5 +1427,7 @@
       }
     }
   },
-  "end_of_day": "Ende des Tages"
+  "end_of_day": "Ende des Tages",
+  "link_open_failed": "Link konnte nicht geöffnet werden",
+  "copy_link": "Link kopieren"
 }

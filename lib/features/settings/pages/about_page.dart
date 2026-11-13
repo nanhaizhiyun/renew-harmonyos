@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:streak/app/theme/app_theme.dart';
 import 'package:streak/app/theme/app_tokens.dart';
 import 'package:streak/core/extensions/inset_extensions.dart';
@@ -14,7 +15,6 @@ import 'package:streak/core/express/express_type.dart';
 import 'package:streak/core/minimal/minimal_type.dart';
 
 const _kGitHubUrl = 'https://github.com/InlitX/streak';
-const _kForkUrl = 'https://github.com/nanhaizhiyun/renew-harmonyos';
 const _base = Duration(milliseconds: 340);
 
 class AboutPage extends StatefulWidget {
@@ -29,7 +29,14 @@ class _AboutPageState extends State<AboutPage> {
     try {
       await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
     } catch (_) {
-      if (mounted) AppSnackbar.error(context, url);
+      if (mounted) {
+        AppSnackbar.action(
+          context,
+          context.l10n.link_open_failed,
+          label: context.l10n.copy_link,
+          onPressed: () => Clipboard.setData(ClipboardData(text: url)),
+        );
+      }
     }
   }
 
@@ -143,15 +150,7 @@ class _AboutPageState extends State<AboutPage> {
             index: 3,
             delay: _base,
             child: Center(
-              child: _MadeBy(onTap: () => _open(_kGitHubUrl)),
-            ),
-          ),
-          const SizedBox(height: 12),
-          Entrance(
-            index: 4,
-            delay: _base,
-            child: Center(
-              child: _ViewSource(onTap: () => _open(_kForkUrl)),
+              child: _SourceLine(onTap: () => _open(_kGitHubUrl)),
             ),
           ),
         ],
@@ -160,8 +159,8 @@ class _AboutPageState extends State<AboutPage> {
   }
 }
 
-class _MadeBy extends StatelessWidget {
-  const _MadeBy({required this.onTap});
+class _SourceLine extends StatelessWidget {
+  const _SourceLine({required this.onTap});
 
   final VoidCallback onTap;
 
@@ -171,67 +170,49 @@ class _MadeBy extends StatelessWidget {
     final text = context.l10n.made_by;
     final handle = context.l10n.dev_handle;
     final start = handle.isEmpty ? -1 : text.indexOf(handle);
-    final style = TextStyle(
+    final source = context.l10n.view_source;
+    final base = TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w600,
       color: scheme.onSurface.withValues(alpha: 0.85),
     );
-
-    if (start < 0) {
-      return Text(text, textAlign: TextAlign.center, style: style);
-    }
-
-    return Semantics(
-      link: true,
-      label: handle,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(8),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          child: Text.rich(
-            TextSpan(
-              children: [
-                TextSpan(text: text.substring(0, start)),
-                TextSpan(
-                  text: handle,
-                  style: TextStyle(
-                    color: scheme.primary,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                TextSpan(text: text.substring(start + handle.length)),
-              ],
-            ),
-            textAlign: TextAlign.center,
-            style: style,
-          ),
+    final linkStyle = TextStyle(
+      color: scheme.primary,
+      fontWeight: FontWeight.w700,
+    );
+    final spans = <InlineSpan>[
+      if (start < 0)
+        TextSpan(text: text)
+      else ...[
+        if (start > 0) TextSpan(text: text.substring(0, start)),
+        TextSpan(text: handle, style: linkStyle),
+        TextSpan(text: text.substring(start + handle.length)),
+      ],
+      const TextSpan(text: ' · '),
+      TextSpan(
+        text: source,
+        style: linkStyle.copyWith(
+          decoration: TextDecoration.underline,
+          decorationColor: scheme.primary.withValues(alpha: 0.4),
         ),
       ),
-    );
-  }
-}
+    ];
 
-class _ViewSource extends StatelessWidget {
-  const _ViewSource({required this.onTap});
-
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = context.colors;
     return Semantics(
       link: true,
+      label: '$text · $source',
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(8),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          child: Text(
-            context.l10n.view_source,
-            style: TextStyle(
-              fontSize: 13,
-              color: scheme.onSurface.withValues(alpha: 0.6),
+          // vertical 14 keeps the single-line row at ~44px, the minimum touch target
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text.rich(
+              TextSpan(children: spans),
+              maxLines: 1,
+              style: base,
             ),
           ),
         ),

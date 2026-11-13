@@ -261,7 +261,7 @@
   "archive": "Archive",
   "share_friends": "Share with a friend",
   "share_friends_sub": "Send them the app",
-  "share_friends_message": "I'm keeping my streaks alive with Renew — a small, free, offline habit tracker with no accounts and no ads. Come build yours: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "I'm keeping my streaks alive with Renew — a small, free, offline habit tracker with no accounts and no ads. Come build yours: https://github.com/InlitX/streak",
   "copy_message": "Copy message",
   "message_copied": "Message copied",
   "app_lock": "App lock",
@@ -461,7 +461,7 @@
   "rate_github_sub": "Support the project with a star",
   "buy_coffee": "Buy me a coffee",
   "buy_coffee_sub": "Help keep the app free",
-  "view_source": "View source on GitHub",
+  "view_source": "View source",
   "about_title": "Built for you. Free, forever.",
   "about_footer": "Made with ☕ and a lot of free time.",
   "about_body": "Renew was born from a simple idea: why pay to track your own habits?\n\nThis app is completely open source. Anyone can see exactly how it works, suggest improvements, or even build their own version. No black boxes. No surprises.\n\nYour privacy is total — everything stays on your phone. No accounts, no servers, no ads. Not a single byte leaves your device.\n\nNo limits. Create as many habits as you want. No subscriptions, no \"pro version\", no pop-ups asking you to pay. Ever.\n\nIf the app brings you something, you can support it with a star on GitHub or by buying me a coffee. But it is completely optional — the app is yours either way.",
@@ -1680,5 +1680,7 @@
   "app_lock_biometric_sub": "The fingerprint, face or lock you already use on this phone",
   "todo_repeat_last_day": "On the last day",
   "todo_sort_time": "By date and time",
-  "todo_sort_name": "A to Z"
+  "todo_sort_name": "A to Z",
+  "link_open_failed": "Couldn't open the link",
+  "copy_link": "Copy link"
 }

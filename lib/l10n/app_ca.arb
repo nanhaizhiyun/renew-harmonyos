@@ -78,7 +78,7 @@
       }
     }
   },
-  "share_friends_message": "Mantinc les meues ratxes actives amb Renew: una aplicació senzilla, gratuïta i que funciona sense connexió per fer seguiment d'hàbits, sense comptes ni anuncis. Vine a crear la teua: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "Mantinc les meues ratxes actives amb Renew: una aplicació senzilla, gratuïta i que funciona sense connexió per fer seguiment d'hàbits, sense comptes ni anuncis. Vine a crear la teua: https://github.com/InlitX/streak",
   "pin_recovery_body": "Si oblides el PIN, aquest codi obre Renew i desactiva el bloqueig. Guarda'l en un lloc segur: no es tornarà a mostrar.",
   "focus_delete_sessions_body": "{count, plural, =1{S'eliminarà 1 sessió de concentració. Aquesta acció no es pot desfer.} other{S'eliminaran {count} sessions de concentració. Aquesta acció no es pot desfer.}}",
   "@focus_delete_sessions_body": {
@@ -637,7 +637,7 @@
   "rate_github_sub": "Dóna suport al projecte amb una estrella",
   "buy_coffee": "Convida'm a un cafè",
   "buy_coffee_sub": "Ajuda a mantenir l'aplicació gratuïta",
-  "view_source": "Veure el codi font a GitHub",
+  "view_source": "Mostra el codi",
   "about_title": "Fet per a tu. Gratuït, per sempre.",
   "about_footer": "Fet amb ☕ i molt de temps lliure.",
   "close": "Tanca",
@@ -2048,5 +2048,7 @@
         "type": "String"
       }
     }
-  }
+  },
+  "link_open_failed": "No s'ha pogut obrir l'enllaç",
+  "copy_link": "Copia l'enllaç"
 }

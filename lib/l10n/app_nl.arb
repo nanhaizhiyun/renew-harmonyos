@@ -211,7 +211,7 @@
   "archive": "Archiveer",
   "share_friends": "Deel met een vriend",
   "share_friends_sub": "Stuur hen de app",
-  "share_friends_message": "Ik houd mijn reeksen in stand met Renew — een kleine, gratis, offline gewoontetracker zonder accounts en zonder advertenties. Kom en maak je eigen reeks: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "Ik houd mijn reeksen in stand met Renew — een kleine, gratis, offline gewoontetracker zonder accounts en zonder advertenties. Kom en maak je eigen reeks: https://github.com/InlitX/streak",
   "copy_message": "Kopieer bericht",
   "message_copied": "Bericht gekopieerd",
   "app_lock": "Vergrendel app",
@@ -372,7 +372,7 @@
   "rate_github_sub": "Steun het project met een ster",
   "buy_coffee": "Koop een koffie voor mij",
   "buy_coffee_sub": "Help mee om de app gratis te houden",
-  "view_source": "Bekijk broncode op GitHub",
+  "view_source": "Broncode bekijken",
   "about_title": "Voor jou gemaakt. Gratis, voor altijd.",
   "about_footer": "Gemaakt met ☕ en veel vrije tijd.",
   "about_body": "Renew is ontstaan uit een eenvoudig idee: waarom zou je betalen om je eigen gewoontes bij te houden?\n\nDeze app is volledig open source. Iedereen kan precies zien hoe het werkt, verbeteringen voorstellen of zelfs een eigen versie bouwen. Geen ‘black boxes’. Geen verrassingen.\n\nJe privacy is volledig gewaarborgd — alles blijft op je toestel staan. Geen accounts, geen servers, geen advertenties. Er verlaat geen enkele byte je apparaat.\n\nGeen beperkingen. Creëer zoveel gewoontes als je wilt. Geen abonnementen, geen ‘pro-versie’, geen pop-ups waarin je wordt gevraagd om te betalen. Nooit.\n\nAls je iets aan de app hebt, kun je hem steunen door een ster te geven op GitHub of door een koffie voor me te trakteren. Maar dat is helemaal vrijblijvend — de app is hoe dan ook van jou.",
@@ -877,5 +877,7 @@
   "habit_time_none": "Elke tijd",
   "done": "Klaar",
   "start_view_sub": "Het scherm waar Vandaag in opent",
-  "perfect_streak": "Perfecte dagreeks"
+  "perfect_streak": "Perfecte dagreeks",
+  "link_open_failed": "Kan de link niet openen",
+  "copy_link": "Link kopiëren"
 }

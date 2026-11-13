@@ -307,7 +307,7 @@
   "archive": "Arşivle",
   "share_friends": "Bir arkadaşınla paylaş",
   "share_friends_sub": "Ona uygulamayı gönder",
-  "share_friends_message": "Serilerimi Renew ile sürdürüyorum — küçük, ücretsiz, çevrimdışı çalışan, hesapsız ve reklamsız bir alışkanlık takipçisi. Sen de kendi serini başlat: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "Serilerimi Renew ile sürdürüyorum — küçük, ücretsiz, çevrimdışı çalışan, hesapsız ve reklamsız bir alışkanlık takipçisi. Sen de kendi serini başlat: https://github.com/InlitX/streak",
   "message_copied": "Mesaj kopyalandı",
   "app_lock": "Uygulama kilidi",
   "app_lock_sub": "Renew'i açmak için parmak izi veya yüz doğrulaması iste",
@@ -520,7 +520,7 @@
   "rate_github_sub": "Bir yıldızla projeyi destekle",
   "buy_coffee": "Bana bir kahve ısmarla",
   "buy_coffee_sub": "Uygulamanın ücretsiz kalmasına yardım et",
-  "view_source": "Kaynağı GitHub'da gör",
+  "view_source": "Kaynağı gör",
   "about_title": "Senin için yapıldı. Sonsuza dek ücretsiz.",
   "about_footer": "☕ ve bolca boş zamanla yapıldı.",
   "about_body": "Renew basit bir fikirden doğdu: kendi alışkanlıklarını takip etmek için neden para ödeyesin?\n\nBu uygulama tamamen açık kaynak. Herkes tam olarak nasıl çalıştığını görebilir, iyileştirme önerebilir, hatta kendi sürümünü yapabilir. Kara kutu yok. Sürpriz yok.\n\nGizliliğin tam: her şey telefonunda kalır. Hesap yok, sunucu yok, reklam yok. Cihazından tek bir bayt bile çıkmaz.\n\nSınır yok. İstediğin kadar alışkanlık oluştur. Abonelik yok, \"pro sürüm\" yok, senden para isteyen açılır pencereler yok. Asla.\n\nUygulama sana bir şey katıyorsa GitHub'da bir yıldızla ya da bana bir kahve ısmarlayarak destekleyebilirsin. Ama bu tamamen isteğe bağlı — uygulama her durumda senin.",
@@ -1733,5 +1733,7 @@
   "quant_preset_steps": "Adım",
   "health_steps_denied": "Renew, izin vermediğiniz zaman adımlarınızı okuyamaz",
   "health_permission": "İzin",
-  "health_unit_steps": "adım"
+  "health_unit_steps": "adım",
+  "link_open_failed": "Bağlantı açılamadı",
+  "copy_link": "Bağlantıyı kopyala"
 }

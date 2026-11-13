@@ -246,7 +246,7 @@
   "archive": "Arhivează",
   "share_friends": "Trimite unui prieten",
   "share_friends_sub": "Trimite-le aplicația",
-  "share_friends_message": "Îmi țin streak-urile în viață cu Renew — un tracker de obiceiuri mic, gratuit și offline, fără conturi și fără reclame. Vino să-ți construiești și tu: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "Îmi țin streak-urile în viață cu Renew — un tracker de obiceiuri mic, gratuit și offline, fără conturi și fără reclame. Vino să-ți construiești și tu: https://github.com/InlitX/streak",
   "copy_message": "Copiază mesajul",
   "message_copied": "Mesaj copiat",
   "app_lock": "Blocarea aplicației",
@@ -467,7 +467,7 @@
   "rate_github_sub": "Susține proiectul cu o stea",
   "buy_coffee": "Cumpără-mi o cafea",
   "buy_coffee_sub": "Ajută la menținerea aplicației gratuite",
-  "view_source": "Vezi codul sursă pe GitHub",
+  "view_source": "Vezi codul",
   "about_title": "Creată pentru tine. Gratuit, pentru totdeauna.",
   "about_footer": "Făcută cu ☕ și mult timp liber.",
   "about_body": "Renew s-a născut dintr-o idee simplă: de ce să plătești ca să-ți urmărești propriile obiceiuri?\n\nAceastă aplicație este complet open source. Oricine poate vedea exact cum funcționează, poate sugera îmbunătățiri sau chiar își poate construi propria versiune. Fără cutii negre. Fără surprize.\n\nConfidențialitatea ta este totală — totul rămâne pe telefonul tău. Fără conturi, fără servere, fără reclame. Niciun octet nu părăsește dispozitivul tău.\n\nFără limite. Creează câte obiceiuri vrei. Fără abonamente, fără „versiune pro”, fără ferestre care îți cer să plătești. Niciodată.\n\nDacă aplicația îți aduce ceva, o poți susține cu o stea pe GitHub sau cumpărându-mi o cafea. Dar este complet opțional — aplicația e a ta oricum.",
@@ -1398,5 +1398,7 @@
   "difficulty_option_sub": "Permite ca obiceiurile mai dificile să conteze mai mult în progresul zilei",
   "todo_save_another": "Salvează și adaugă alta",
   "todo_add_subtask": "Adaugă subsarcină",
-  "pin_paste": "Lipește codul"
+  "pin_paste": "Lipește codul",
+  "link_open_failed": "Nu s-a putut deschide linkul",
+  "copy_link": "Copiază linkul"
 }

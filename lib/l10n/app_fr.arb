@@ -73,7 +73,7 @@
       }
     }
   },
-  "view_source": "Voir la code source sur GitHub",
+  "view_source": "Voir le code",
   "notes_empty": "Pas de notes pour ce jour",
   "add_image": "Ajouter une image",
   "consistency_trend": "Tendance regulière",
@@ -433,7 +433,7 @@
   "bg_gradient": "Gradient",
   "rate_github_sub": "Supporter le projet avec une étoile",
   "focus_target_reached": "Objectif atteint",
-  "share_friends_message": "Je garde ma série vivant avec Renew - un petit tracker d'habitude gratuit, hors ligne et sans compte ni pubs. Faites les vôtres sur : https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "Je garde ma série vivant avec Renew - un petit tracker d'habitude gratuit, hors ligne et sans compte ni pubs. Faites les vôtres sur : https://github.com/InlitX/streak",
   "note_kind_completed": "Complété",
   "focus_break": "Pause",
   "no_data_yet": "Pas encore de données",
@@ -1301,5 +1301,7 @@
   "focus_label_remove_confirm": "Supprimer",
   "by_label": "Par étiquette",
   "reminders_ready_title": "Les rappels sont activés",
-  "focus_end_add_time": "Ajouter un temps de concentration"
+  "focus_end_add_time": "Ajouter un temps de concentration",
+  "link_open_failed": "Impossible d'ouvrir le lien",
+  "copy_link": "Copier le lien"
 }

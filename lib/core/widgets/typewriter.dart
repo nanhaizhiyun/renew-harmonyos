@@ -44,6 +44,10 @@ class _TypewriterState extends State<Typewriter>
     final base = widget.style ?? DefaultTextStyle.of(context).style;
     final colour = base.color ?? DefaultTextStyle.of(context).style.color!;
 
+    if (MediaQuery.disableAnimationsOf(context)) {
+      return Text(widget.text, style: base);
+    }
+
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, _) {

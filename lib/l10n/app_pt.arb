@@ -27,7 +27,7 @@
   "onb1_body": "Registre um hábito com um toque e veja sua sequência crescer dia após dia.",
   "kind_negative_hint": "Todos os dias contam como concluídos por padrão, então sua sequência cresce automaticamente. Toque na marca de verificação apenas se você falhar. Esse dia ficará vermelho, e você poderá desfazer a ação.",
   "monthly": "Mensal",
-  "view_source": "Ver código-fonte no GitHub",
+  "view_source": "Ver o código",
   "add_image": "Adicionar imagem",
   "freq_per_month_short": "{n}×/mês",
   "@freq_per_month_short": {
@@ -604,7 +604,7 @@
   },
   "journey": "Jornada",
   "focus_target_reached": "Meta alcançada",
-  "share_friends_message": "Estou mantendo meu hábitos frequentes com o Renew — um rastreador de hábitos pequeno, gratuito e offline, sem contas nem anúncios. Venha você também: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "Estou mantendo meu hábitos frequentes com o Renew — um rastreador de hábitos pequeno, gratuito e offline, sem contas nem anúncios. Venha você também: https://github.com/InlitX/streak",
   "note_kind_completed": "Completado",
   "focus_break": "Descanso",
   "undo": "Desfazer",
@@ -2049,5 +2049,7 @@
   "color_part_success": "Concluído",
   "color_part_warning": "Aviso",
   "color_part_danger": "Erro",
-  "color_part_info": "Informação"
+  "color_part_info": "Informação",
+  "link_open_failed": "Não foi possível abrir o link",
+  "copy_link": "Copiar link"
 }

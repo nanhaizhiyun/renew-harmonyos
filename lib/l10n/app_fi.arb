@@ -34,7 +34,7 @@
   "message_copied": "Viesti kopioitu",
   "kind_negative_hint": "Jokainen päivä lasketaan oletuksena suoritetuksi – putkesi kasvaa itsestään. Napauta ruutua vain, jos lipsut tavoitteesta; se päivä muuttuu punaiseksi ja voit kumota sen.",
   "monthly": "Kuukausittain",
-  "view_source": "Katso lähdekoodi GitHubissa",
+  "view_source": "Näytä lähdekodi",
   "clean_days": "Puhtaita päiviä",
   "add_image": "Lisää kuva",
   "consistency_trend": "Johdomukaisuuden trendi",
@@ -282,7 +282,7 @@
   "daily": "Päivittäin",
   "bg_gradient": "Liukuväri",
   "rate_github_sub": "Tue projektia antamalla tähti",
-  "share_friends_message": "Pidän tavoistani kiinni Renewilla – pieni, ilmainen ja paikallinen tapojen seuranta ilman käyttäjätunnuksia ja mainoksia. Tutustu sinäkin: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "Pidän tavoistani kiinni Renewilla – pieni, ilmainen ja paikallinen tapojen seuranta ilman käyttäjätunnuksia ja mainoksia. Tutustu sinäkin: https://github.com/InlitX/streak",
   "no_data_yet": "Ei vielä tietoja",
   "about": "Tietoja",
   "undo": "Kumoa",
@@ -475,5 +475,7 @@
   "profile": "Profiili",
   "reminders": "Muistutukset",
   "active_days": "Aktiivisia päiviä",
-  "refresh_nothing": "Kansiossa ei ole mitään uutta"
+  "refresh_nothing": "Kansiossa ei ole mitään uutta",
+  "link_open_failed": "Linkkiä ei voitu avata",
+  "copy_link": "Kopioi linkki"
 }

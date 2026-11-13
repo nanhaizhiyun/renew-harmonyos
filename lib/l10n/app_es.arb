@@ -215,7 +215,7 @@
   "archive": "Archivar",
   "share_friends": "Comparte con un amigo",
   "share_friends_sub": "Mándale la app",
-  "share_friends_message": "Estoy manteniendo vivas mis rachas con Renew: una app de hábitos pequeña, gratis y sin conexión, sin cuentas ni anuncios. Anímate y crea las tuyas: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "Estoy manteniendo vivas mis rachas con Renew: una app de hábitos pequeña, gratis y sin conexión, sin cuentas ni anuncios. Anímate y crea las tuyas: https://github.com/InlitX/streak",
   "copy_message": "Copiar mensaje",
   "message_copied": "Mensaje copiado",
   "app_lock": "Bloqueo de la app",
@@ -430,7 +430,7 @@
   "rate_github_sub": "Apoya el proyecto con una estrella",
   "buy_coffee": "Invítame un café",
   "buy_coffee_sub": "Ayuda a mantener la app gratis",
-  "view_source": "Ver código en GitHub",
+  "view_source": "Ver el código",
   "about_title": "Construido para ti. Gratis, para siempre.",
   "about_footer": "Hecho con ☕ y mucho tiempo libre.",
   "about_body": "Renew nació de una idea simple: ¿por qué pagar por seguir tus propios hábitos?\n\nEsta app es completamente de código abierto. Cualquiera puede ver exactamente cómo funciona, proponer mejoras, o incluso crear su propia versión. Sin cajas negras. Sin sorpresas.\n\nTu privacidad es total — todo queda en tu teléfono. Sin cuentas, sin servidores, sin anuncios. Ni un solo dato sale de tu dispositivo.\n\nSin límites. Crea todos los hábitos que quieras. Sin suscripciones, sin \"versión pro\", sin pop-ups pidiéndote que pagues. Nunca.\n\nSi la app te aporta algo, puedes apoyarla con una estrella en GitHub o invitándome a un café. Pero es completamente opcional — la app es tuya igual.",
@@ -1463,5 +1463,7 @@
   "app_lock_biometric_sub": "La huella, la cara o el bloqueo que ya usas en el móvil",
   "todo_repeat_last_day": "El último día",
   "todo_sort_time": "Por fecha y hora",
-  "todo_sort_name": "De la A a la Z"
+  "todo_sort_name": "De la A a la Z",
+  "link_open_failed": "No se pudo abrir el enlace",
+  "copy_link": "Copiar enlace"
 }

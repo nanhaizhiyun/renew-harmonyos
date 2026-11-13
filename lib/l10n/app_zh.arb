@@ -187,7 +187,7 @@
   "archive": "归档",
   "share_friends": "分享给朋友",
   "share_friends_sub": "发送应用",
-  "share_friends_message": "我用不止习惯坚持每日打卡——一款小巧、免费、无需账号、无广告的离线习惯追踪器。快来创建你的习惯：https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "我用不止习惯坚持每日打卡——一款小巧、免费、无需账号、无广告的离线习惯追踪器。快来创建你的习惯：https://github.com/InlitX/streak",
   "copy_message": "复制消息",
   "message_copied": "消息已复制",
   "app_lock": "应用锁",
@@ -332,7 +332,7 @@
   "rate_github_sub": "点亮星标支持本项目",
   "buy_coffee": "请我喝杯咖啡",
   "buy_coffee_sub": "助力维持应用免费开放",
-  "view_source": "在 GitHub 查看源代码",
+  "view_source": "查看源码",
   "about_title": "为你而生，永久免费。",
   "about_footer": "由☕与大量闲暇时光打磨而成。",
   "about_body": "不止习惯诞生于一个简单的想法：为什么要为记录自己的习惯付费？\n\n这款应用完全开源。任何人都能看清它的运作方式、提出改进建议，甚至打造自己的版本。没有黑箱，没有意外。\n\n你的隐私绝对完整 — 一切数据都保存在你的手机上。无需账号，没有服务器，没有广告。连一个字节都不会离开你的设备。\n\n毫无限制。想创建多少习惯都行。没有订阅，没有 \"专业版\"，没有弹窗催你付费。永远不会。\n\n如果这款应用对你有所帮助，你可以在 GitHub 上点颗星，或是请我喝杯咖啡来支持它。但这完全自愿 —— 无论如何，应用都属于你。",
@@ -1199,5 +1199,7 @@
   "app_lock_biometric_sub": "使用这台手机上已有的指纹、面容或锁屏密码",
   "todo_repeat_last_day": "最后一天",
   "todo_sort_time": "按日期和时间",
-  "todo_sort_name": "A 到 Z"
+  "todo_sort_name": "A 到 Z",
+  "link_open_failed": "无法打开链接",
+  "copy_link": "复制链接"
 }

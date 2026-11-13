@@ -224,7 +224,7 @@
       }
     }
   },
-  "share_friends_message": "היישום Renew עוזר לי לבנות הרגלים חדשים – זהו יישום לניהול הרגלים, הוא קליל וחופשי ולא דורש חיבור לאינטרנט או יצירת חשבון, והוא נטול פרסומות. אני רוצה להזמין אותך לבנות הרגלים משלך: https://github.com/nanhaizhiyun/renew-harmonyos",
+  "share_friends_message": "היישום Renew עוזר לי לבנות הרגלים חדשים – זהו יישום לניהול הרגלים, הוא קליל וחופשי ולא דורש חיבור לאינטרנט או יצירת חשבון, והוא נטול פרסומות. אני רוצה להזמין אותך לבנות הרגלים משלך: https://github.com/InlitX/streak",
   "app_lock_sub": "דרישת טביעת אצבע או זיהוי פנים לפתיחת Renew",
   "app_lock_unavailable": "לא הוגדרו פרטי אימות ביומטריים בטלפון זה",
   "app_lock_failed": "לא היה ניתן לאמת את זהותך",
@@ -296,7 +296,7 @@
   "about_app_sub": "גרסה ותודות",
   "my_heatmap": "מפת ההתפלגות שלי",
   "rate_github": "מתן כוכב ב־GitHub",
-  "view_source": "הצגת קוד המקור ב־GitHub",
+  "view_source": "צפה בקוד",
   "close": "סגירה",
   "import_replace": "להחליף הכול",
   "import_merge": "מיזוג",
@@ -398,5 +398,7 @@
   "widget_activity": "פעילות",
   "widget_cfg_color": "צבע",
   "widget_cfg_image": "תמונה",
-  "widget_cfg_border": "גבול"
+  "widget_cfg_border": "גבול",
+  "link_open_failed": "לא ניתן לפתוח את הקישור",
+  "copy_link": "העתק קישור"
 }
