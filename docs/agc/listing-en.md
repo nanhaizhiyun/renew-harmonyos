@@ -67,5 +67,5 @@ habit tracker, streak, daily habits, todo list, focus timer, offline, no ads, op
 - [ ] Reminder copy kept (notification system shipped in-build via 3249410+2824bad); verify end-to-end firing on the AGC release channel
 - [x] Screenshots ready (store-screenshots toolchain, 8 × 1920×1080 per language); AGC upload-page size validation governs
 - [ ] Version matches `pubspec.yaml` (1.0.0+18): on the release install, `hdc shell bm dump -n com.rixin.app` top-level `versionCode: 18` / `versionName: 1.0.0` (the 0/"" pairs inside the `appQuickFix` node are patch metadata, always zero — not the version)
-- [x] Share link swapped in all 18 arb locales → https://github.com/InlitX/streak (2026-11-13: in-app source/share links point upstream Streak; the repo URL above = the fork, where the GPL source offer for this binary lives)
+- [x] Share link swapped in all 18 arb locales → https://github.com/InlitX/streak (2026-11-13: in-app "View source" points to the fork — the HarmonyOS repo, where the GPL source offer for this binary lives; share links point upstream Streak)
 - [ ] (Optional) `lib/app/startup_failure.dart` feedback URL points to upstream issues — consider pointing it at the fork tracker at submission

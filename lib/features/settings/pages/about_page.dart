@@ -14,7 +14,7 @@ import 'package:streak/features/settings/state/settings_controller.dart';
 import 'package:streak/core/express/express_type.dart';
 import 'package:streak/core/minimal/minimal_type.dart';
 
-const _kGitHubUrl = 'https://github.com/InlitX/streak';
+const _kGitHubUrl = 'https://github.com/nanhaizhiyun/renew-harmonyos';
 const _base = Duration(milliseconds: 340);
 
 class AboutPage extends StatefulWidget {
