@@ -918,7 +918,7 @@ class _TodosPageState extends State<TodosPage>
           _ghostLayer(tags, FolderLayer.front),
           Positioned(
             right: (minimal ? 20 : 16) + context.safeInsets.right,
-            bottom: (minimal ? 20 : 98) + context.bottomInset,
+            bottom: (minimal ? 20 : 112) + context.bottomInset,
             child: AnimatedScale(
               scale: _selected.isEmpty ? 1 : 0,
               duration: const Duration(milliseconds: 220),
@@ -938,7 +938,7 @@ class _TodosPageState extends State<TodosPage>
           Positioned(
             left: 12,
             right: 12,
-            bottom: (minimal ? 20 : 78) + context.bottomInset,
+            bottom: (minimal ? 20 : 112) + context.bottomInset,
             child: Center(
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 260),
